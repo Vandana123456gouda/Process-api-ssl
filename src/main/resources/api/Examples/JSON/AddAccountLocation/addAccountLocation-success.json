@@ -1,0 +1,14 @@
+{
+  "Reply": {
+    "AddAccountLocation": {
+      "Params": {
+        "ACCOUNT_NO": "1000017",
+        "PERSON_NO": "1000040",
+        "LOCATION_NO": "3025032",
+        "STATUS": "0",
+        "STATUS_DESC": "Account created."
+      },
+      "STATUS": "0"
+    }
+  }
+}

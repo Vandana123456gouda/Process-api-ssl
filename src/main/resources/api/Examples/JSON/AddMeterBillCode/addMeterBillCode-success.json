@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "AddMeterBillCode": {
+      "Params": {
+        "STATUS": 0,
+        "STATUS_DESC": "Installed meter bill code created!"
+      },
+      "STATUS": 0
+    }
+  }
+}

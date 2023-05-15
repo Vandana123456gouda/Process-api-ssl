@@ -1,0 +1,24 @@
+{
+  "Reply": {
+    "GetPhoneRecords": {
+      "Params": {
+        "STATUS": 0,
+        "PHONE_COUNT": 1,
+        "PHONE": {
+          "PHONE_SEQ": 1,
+          "ACTIVE_DT": "19720501",
+          "INACTIVE_DT": "",
+          "PHONE_CD": "HOME",
+          "PHONE_NO": "8087345980",
+          "EXTENSION_NO": "",
+          "PHONE_CMTS": "",
+          "PERSON_PHONE_YN": "T",
+          "ACCOUNT": {
+            "ACCOUNT_NO": 2095881
+          }
+        }
+      },
+      "STATUS": 0
+    }
+  }
+}

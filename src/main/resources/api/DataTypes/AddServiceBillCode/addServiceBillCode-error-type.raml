@@ -1,0 +1,24 @@
+#%RAML 1.0 DataType 
+type: object
+properties:
+  Reply:
+    type: object
+    properties:
+      AddServiceBillCode:
+        type: object
+        properties:
+          Params:
+            type: object
+            properties:
+              STATUS:
+                type: integer
+                example: -100
+                required: false
+              STATUS_DESC:
+                type: string
+                example: LOCATION_NO tag is missing or is empty.
+                required: false
+          STATUS:
+            type: integer
+            example: 0
+            required: false

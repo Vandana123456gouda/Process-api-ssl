@@ -1,0 +1,450 @@
+#%RAML 1.0 DataType 
+type: object
+properties:
+  Reply:
+    type: object
+    properties:
+      GetBillDetails:
+        type: object
+        properties:
+          Params:
+            type: object
+            properties:
+              STATUS:
+                type: integer
+                required: false
+              BILL:
+                type: object
+                properties:
+                  ACCOUNT_NO:
+                    type: integer
+                    required: false
+                  BILL_RUN_DT:
+                    type: string
+                    required: false
+                  BILL_RUN_TM:
+                    type: string
+                    required: false
+                  BILL_SEQ_NO:
+                    type: integer
+                    required: false
+                  INVOICE_NO:
+                    type: string
+                    required: false
+                    maxLength: 30
+                  BILL_TP:
+                    type: string
+                    maxLength: 5
+                    required: false
+                  BILL_DT:
+                    type: string
+                    required: false
+                  POSTING_DT:
+                    type: string
+                    required: false
+                  BILL_DUE_DT:
+                    type: string
+                    required: false
+                  PERIOD_FROM_DT:
+                    type: string
+                    required: false
+                  PERIOD_TO_DT:
+                    type: string
+                    required: false
+                  GL_YEAR:
+                    type: string
+                    required: false
+                  GL_PERIOD:
+                    type: number
+                    required: false
+                  BILLING_DAYS:
+                    type: number
+                    required: false
+                  TITLE_CODE:
+                    type: string
+                    required: false
+                  FIRST_NM:
+                    type: string
+                    required: false
+                  MIDDLE_NM:
+                    type: string
+                    required: false
+                  LAST_NM:
+                    type: string
+                    required: false
+                  PHONE_NO:
+                    type: string
+                    required: false
+                  BUILDING_NAME:
+                    type: string
+                    required: false
+                  HOUSE_NO:
+                    type: string
+                    required: false
+                  STREET_PFX_DIR:
+                    type: string
+                    required: false
+                  STREET_NM:
+                    type: string
+                    required: false
+                  STREET_NM_SFX:
+                    type: string
+                    required: false
+                  STREET_SFX_DIR:
+                    type: string
+                    required: false
+                  SEC_ADDR_ID:
+                    type: string
+                    required: false
+                  SEC_ADDR_RANGE:
+                    type: string
+                    required: false
+                  TER_ADDR_ID:
+                    type: string
+                    required: false
+                  TER_ADDR_RANGE:
+                    type: string
+                    required: false
+                  CITY:
+                    type: string
+                    required: false
+                  STATE:
+                    type: string
+                    required: false
+                  ZIP:
+                    type: string
+                    required: false
+                  DELIVERY_INST_TP:
+                    type: string
+                    required: false
+                  DELIVERY_INST_NM:
+                    type: string
+                    required: false
+                  COUNTRY_CD:
+                    type: string
+                    required: false
+                  PO_BOX_NO:
+                    type: string
+                    required: false
+                  ROUTE_PFX:
+                    type: string
+                    required: false
+                  ADDR_ROUTE:
+                    type: string
+                    required: false
+                  IN_CARE_OF:
+                    type: string
+                    required: false
+                  ENVELOPE_MEMO:
+                    type: string
+                    required: false
+                  PREV_BILL_AMT:
+                    type: number
+                    required: false
+                  BUDGET_BILL_AMT:
+                    type: number
+                    required: false
+                  FACTOR_AMT1:
+                    type: number
+                    required: false
+                  DOLLAR_AMT1:
+                    type: number
+                    required: false
+                  AR_DUE_BEFORE_BILL:
+                    type: integer
+                    required: false
+                  AR_UNAPPLIED_CR_BEFORE_BILL:
+                    type: number
+                    required: false
+                  AR_DUE_AFTER_BILL:
+                    type: number
+                    required: false
+                  AR_UNAPPLIED_CR_AFTER_BILL:
+                    type: number
+                    required: false
+                  AR_NET_AFTER_BILL:
+                    type: number
+                    required: false
+                  PENALTY_AMT:
+                    type: number
+                    required: false
+                  BUDGET_DISC_AMT:
+                    type: number
+                    required: false
+                  NON_BILL_GENERATED_CHGS:
+                    type: integer
+                    required: false
+                  TOTAL_PAYMENTS:
+                    type: number
+                    required: false
+                  BILL_GENERATED_CHGS:
+                    type: number
+                    required: false
+                  DISCOUNTED_AMT:
+                    type: number
+                    required: false
+                  DISCOUNT_AMT:
+                    type: number
+                    required: false
+                  DISCOUNT_END_DT:
+                    type: string
+                    required: false
+                  DISCOUNT_APPLIED_YN:
+                    type: string
+                    enum: [T,F, ""]
+                    required: false
+                  BANK_DRAFT_YN:
+                    type: string
+                    enum: [T,F, ""]
+                    required: false
+                  FINAL_YN:
+                    type: string
+                    enum: [T,F, ""]
+                    required: false
+                  CORRECTED_BILL_YN:
+                    type: string
+                    enum: [T,F, ""]
+                    required: false
+                  VOIDED_YN:
+                    type: string
+                    enum: [T,F, ""]
+                    required: false
+                  CANCELED_BILL_YN:
+                    type: string
+                    enum: [T,F, ""]
+                    required: false
+                  REBILL_BILL_YN:
+                    type: string
+                    enum: [T,F, ""]
+                    required: false
+                  OFF_CYCLE_YN:
+                    type: string
+                    enum: [T,F, ""]
+                    required: false
+                  BILL_IS_CORRECTED_YN:
+                    type: string
+                    enum: [T,F, ""]
+                    required: false
+                  DETAILS:
+                    type: object
+                    properties:
+                      COUNT:
+                        type: integer
+                        required: false
+                      DETAIL:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            LOCATION_NO:
+                              type: integer
+                              required: false
+                            SERVICE_SEQ:
+                              type: integer
+                              required: false
+                            DETAIL_TP:
+                              type: string
+                              required: false
+                            DETAIL_SEQ:
+                              type: integer
+                              required: false
+                            DETAIL_CD:
+                              type: string
+                              required: false
+                            ITEM_NO:
+                              type: number
+                              required: false
+                            REPORT_CONTEXT:
+                              type: string
+                              required: false
+                            DETAIL_DT:
+                              type: string
+                              required: false
+                            SUB_PERIOD_SEQ:
+                              type: integer
+                              required: false
+                            PERIOD_FROM_DT:
+                              type: string
+                              required: false
+                            PERIOD_TO_DT:
+                              type: string
+                              required: false
+                            BILLING_DAYS:
+                              type: integer
+                              required: false
+                            DETAIL_AMT:
+                              type: number
+                              required: false
+                            TAXABLE_AMT:
+                              type: integer
+                              required: false
+                            BUDGET_BILL_AMT:
+                              type: number
+                              required: false
+                            BUDGET_BILL_DISC_AMT:
+                              type: number
+                              required: false
+                            DETAIL_DISC_AMT:
+                              type: integer
+                              required: false
+                            METER_SEQ:
+                              type: integer
+                              required: false
+                            METER_SERIAL_NO:
+                              type: string
+                              required: false
+                            READ_FROM:
+                              type: number
+                              required: false
+                            READ_TO:
+                              type: number
+                              required: false
+                            ACTUAL_CONS_AMT:
+                              type: number
+                              required: false
+                            CONS_AMT:
+                              type: number
+                              required: false
+                            BILLED_DEMAND:
+                              type: string
+                              required: false
+                            MULTIPLIER_1:
+                              type: number
+                              required: false
+                            MULTIPLIER_2:
+                              type: number
+                              required: false
+                            DISCOUNTED_YN:
+                              type: string
+                              enum: [T,F, ""]
+                              required: false
+                            BILL_GENERATED_YN:
+                              type: string
+                              enum: [T,F, ""]
+                              required: false
+                            PRORATE_YN:
+                              type: string
+                              enum: [T,F, ""]
+                              required: false
+                            METER_CHG_OUT_YN:
+                              type: string
+                              enum: [T,F, ""]
+                              required: false
+                            MULTIPLE_DIAL_METER_YN:
+                              type: string
+                              enum: [T,F, ""]
+                              required: false
+                            LINKED_BILLING_YN:
+                              type: string
+                              enum: [T,F, ""]
+                              required: false
+                            RETAIL_CHARGE_YN:
+                              type: string
+                              enum: [T,F, ""]
+                              required: false
+                            BILLED_PER_CONTRACT_YN:
+                              type: string
+                              enum: [T,F, ""]
+                              required: false
+                            LOAD_FACTOR:
+                              type: integer
+                              required: false
+                            POWER_FACTOR:
+                              type: number
+                              required: false
+                            SIC_CD:
+                              type: string
+                              required: false
+                            BILL_CD_DETAILS?:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  COUNT:
+                                    type: integer
+                                    required: false
+                                  BILL_CD_DETAIL?:
+                                    type: object
+                                    properties:
+                                      BILL_CD:
+                                        type: string
+                                        required: false
+                                      BC_DETAIL_TP:
+                                        type: integer
+                                        required: false
+                                      BC_DETAIL_SEQ:
+                                        type: integer
+                                        required: false
+                                      CODE_1:
+                                        type: string
+                                        required: false
+                                      CODE_2:
+                                        type: string
+                                        required: false
+                                      CODE_3:
+                                        type: string
+                                        required: false
+                                      CODE_4:
+                                        type: string
+                                        required: false
+                                      LEVEL_FROM:
+                                        type: integer
+                                        required: false
+                                      LEVEL_TO:
+                                        type: integer
+                                        required: false
+                                      CONS_LEVEL_AMT:
+                                        type: number
+                                        required: false
+                                      BC_DETAIL_RATE:
+                                        type: number
+                                        required: false
+                                      BC_DETAIL_AMT:
+                                        type: number
+                                        required: false
+                                      BC_DETAIL_PRORATED_YN:
+                                        type: string
+                                        enum: [T,F, ""]
+                                        required: false
+                                      NUM_1:
+                                        type: number
+                                        required: false
+                                      NUM_2:
+                                        type: number
+                                        required: false
+                                      NUM_3:
+                                        type: number
+                                        required: false
+                                      NUM_4:
+                                        type: number
+                                        required: false
+                                      NUM_5:
+                                        type: number
+                                        required: false
+                                      BC_ACTIVE_DAYS:
+                                        type: number
+                                        required: false
+                                      BC_STANDARD_DAYS:
+                                        type: number
+                                        required: false
+                                      FROM_DT:
+                                        type: string
+                                        required: false
+                                      TO_DT:
+                                        type: string
+                                        required: false
+                                      ITEM_NO:
+                                        type: number
+                                        required: false
+                                      QUANTITY_SEQ:
+                                        type: integer
+                                        required: false
+                                      REPORT_CONTEXT:
+                                        type: string
+                                        required: false
+                                      REPORT_SUB_CONTEXT:
+                                        type: string
+                                        required: false
+          STATUS:
+            type: integer
+            required: false

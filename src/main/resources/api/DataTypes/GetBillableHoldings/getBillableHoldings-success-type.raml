@@ -1,0 +1,102 @@
+#%RAML 1.0 DataType 
+type: object
+properties:
+  Reply:
+    type: object
+    properties:
+      GetBillableHoldings:
+        type: object
+        properties:
+          Params:
+            type: object
+            properties:
+              STATUS:
+                type: string
+                required: false
+              BILLABLE_HOLDING:
+                type: object
+                properties:
+                  LOCATION_NO:
+                    type: integer
+                    required: false
+                  SERVICE_SEQ:
+                    type: integer
+                    required: false
+                  SERVICE_TP:
+                    type: string
+                    required: false
+                  SERVICE_DESCRIPTION:
+                    type: string
+                    required: false
+                  ASSET_TP:
+                    type: string
+                    required: false
+                  ASSET_DESCRIPTION:
+                    type: string
+                    required: false
+                  CONFIG_CD:
+                    type: string
+                    required: false
+                  CONFIG_DESCRIPTION:
+                    type: string
+                    required: false
+                  SEQ_NO:
+                    type: string
+                    required: false
+                  EFFECTIVE_DT:
+                    type: string
+                    required: false
+                  END_DT:
+                    type: string
+                    required: false
+                  GENERIC_1:
+                    type: string
+                    required: false
+                  GENERIC_2:
+                    type: string
+                    required: false
+                  GENERIC_3:
+                    type: string
+                    required: false
+                  GENERIC_4:
+                    type: string
+                    required: false
+                  GENERIC_5:
+                    type: string
+                    required: false
+                  GENERIC_6:
+                    type: string
+                    required: false
+                  GENERIC_7:
+                    type: string
+                    required: false
+                  GENERIC_8:
+                    type: string
+                    required: false
+                  GENERIC_9:
+                    type: string
+                    required: false
+                  GENERIC_10:
+                    type: string
+                    required: false
+                  COUNT:
+                    type: string
+                    required: false
+                  SIC_CD:
+                    type: string
+                    required: false
+                  AREA_SERVED:
+                    type: string
+                    required: false
+                  COMMENTS:
+                    type: string
+                    required: false
+                  STOP_BILL_DT:
+                    type: integer
+                    required: false
+                  START_BILL_DT:
+                    type: integer
+                    required: false
+          STATUS:
+            type: string
+            required: false

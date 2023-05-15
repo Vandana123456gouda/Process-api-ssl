@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "GetAccountServiceLocations": {
+      "Params": {
+        "STATUS": -100,
+        "STATUS_DESC": "ACCOUNT_NO or ACCOUNT_NO_CUSTOM tag is missing or is empty."
+      },
+      "STATUS": 0
+    }
+  }
+}

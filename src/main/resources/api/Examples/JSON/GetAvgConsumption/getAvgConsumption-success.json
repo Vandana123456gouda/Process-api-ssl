@@ -1,0 +1,20 @@
+{
+  "Reply": {
+    "GetAvgConsumption": {
+      "Params": {
+        "AvgConsumption": {
+          "ACCOUNT_NO": 2000000,
+          "LOCATION_NO": 3000003,
+          "SERVICE_SEQ": 1,
+          "METER_SEQ": 1,
+          "YEAR": 2023,
+          "CALC_TP": "",
+          "AVG_CONS": 25,
+          "AVG_PER_DAY": 5,
+          "AVG_PERIOD": 5,
+          "STATUS": ""
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "Request": {
+    "GetMeterBillCode": {
+      "Params": {
+        "LOCATION_NO": 3000003,
+        "ACCOUNT_NO": 1000017,
+        "SERVICE_SEQ": 1,
+        "ACTIVE_DT": "",
+        "INACTIVE_DT": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+#%RAML 1.0 DataType 
+type: object
+# additionalProperties: false
+properties:
+  Request:
+    type: object
+    # additionalProperties: false
+    properties:
+      GetAccount:
+        type: object
+        # additionalProperties: false
+        properties:
+          Params:
+            type: object
+            # additionalProperties: false
+            properties:
+              ACCOUNT_NO:
+                type: integer
+                required: false
+              PREPAY_INFO_YN:
+                type: string
+                required: false
+              FMT_PREPAY_YN:
+                type: string
+                required: false

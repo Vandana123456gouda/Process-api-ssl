@@ -1,0 +1,44 @@
+{
+  "Request": {
+    "SetAccountBillingAddress": {
+      "Params": {
+        "ACCOUNT_NO": 2086328,
+        "ACTIVE_DT": "",
+        "INACTIVE_DT": "",
+        "SEASON_STR_MTH": "",
+        "SEASON_STR_DAY": 20230413,
+        "SEASON_END_MTH": "",
+        "SEASON_END_DAY": 20230417,
+        "ADDRESS_CD": "",
+        "HOUSE_NO": "",
+        "STREET_PFX_DIR": "",
+        "STREET_NM": "",
+        "STREET_NM_SFX": "",
+        "STREET_SFX_DIR": "",
+        "SEC_ADDR_ID": "",
+        "SEC_ADDR_RANGE": "",
+        "TER_ADDR_ID": "",
+        "TER_ADDR_RANGE": "",
+        "ADDR_ID_4": "",
+        "ADDR_RANGE_4": "",
+        "LOCATOR_ID": "",
+        "ROUTE_PFX": "",
+        "ADDR_ROUTE": "",
+        "CITY": "",
+        "PROVINCE_CD": "",
+        "POSTAL_CD": "",
+        "PO_BOX_NO": "",
+        "DELIVERY_INST_TP": "",
+        "DELIVERY_INST_NM": "",
+        "COUNTRY_CD": "",
+        "IN_CARE_OF": "",
+        "ENVELOPE_MEMO": "",
+        "LIS_CD": "",
+        "LIS_NO": "",
+        "LIS_VALIDAT_STAT": "",
+        "PRIMARY_LOCATION_YN": "",
+        "ADDRESS_CMTS": ""
+      }
+    }
+  }
+}

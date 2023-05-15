@@ -1,0 +1,1018 @@
+#%RAML 1.0 Library
+traits:
+  client_id_inforcement:
+    headers:
+      Authorization:
+        type: string
+        required: true
+      x-trace-id:
+        type: string
+        required: true
+        default: Hawaii-ID
+    responses:
+      401:
+        headers:
+          Content-Type:
+            example: "application/json"
+        description: Unauthorized
+        body:
+          application/json:
+            example:
+              Message: Access denied
+      429:
+        headers:
+          Content-Type:
+            example: "application/json"
+        description: Quota Reached
+        body:
+          application/json:
+            example:
+              Message: Quota Reached
+      500:
+        headers:
+          Content-Type:
+            example: "application/json"
+        description: Server error
+        body:
+          application/json:
+            example:
+              Message: Server error
+resourceTypes:
+  Addaccountlocation:
+    description: |-
+      The AddAccountLocation function can be used to:
+      - Create both Account/Person and Location/Service records
+      - Create a new Account/Person record and link it to an existing Location/Service
+      - Create a new Location/Service record and link it to an existing Account/Person
+      - Create a link between an existing Account/Person record and an existing Service/Location record
+    displayName: AddAccountLocation
+    post:
+      is: [client_id_inforcement]
+      displayName: Add Account Location
+      body:
+        application/json:
+          example: !include ../Examples/JSON/AddAccountLocation/addAccountLocation-request.json
+          type: !include ../DataTypes/AddAccountLocation/addAccountLocation-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              example: !include ../Examples/JSON/AddAccountLocation/addAccountLocation-success.json
+              type: !include ../DataTypes/AddAccountLocation/addAccountLocation-success-type.raml
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              example: !include ../Examples/JSON/AddAccountLocation/addAccountLocation-error.json
+              type: !include ../DataTypes/AddAccountLocation/addAccountLocation-error-type.raml
+
+  AddAccountPerson:
+    displayName: AddAccountPerson
+    description: |-
+      The AddAccountPerson function is used to create new Person and Account records
+      The records created can also include account mailing address and phone number information.
+      The function can include multiple addresses and phone numbers. 
+      It assumes that the lastrecord processed is the default address/phone number for the person.
+    post:
+      is: [client_id_inforcement]
+      displayName: Add Account Person
+      body:
+        application/json:
+          example: !include ../Examples/JSON/AddAccountPerson/addAccountPerson-request.json
+          type: !include ../DataTypes/AddAccountPerson/addAccountPerson-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              example: !include ../Examples/JSON/AddAccountPerson/addAccountPerson-success.json
+              type: !include ../DataTypes/AddAccountPerson/addAccountPerson-success-type.raml
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              example: !include ../Examples/JSON/AddAccountPerson/addAccountPerson-error.json
+              type: !include ../DataTypes/AddAccountPerson/addAccountPerson-error-type.raml
+
+  AddAccountContract:
+    description: The AddAccountContract function is used to create new contract records for an Account.
+    displayName: AddAccountContract
+    post:
+      is: [client_id_inforcement]
+      displayName: Add Account Contract
+      body:
+        application/json:
+          example: !include ../Examples/JSON/AddAccountContract/addAccountContract-request.json
+          type: !include ../DataTypes/AddAccountContract/addAccountContract-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              example: !include ../Examples/JSON/AddAccountContract/addAccountContract-success.json
+              type: !include ../DataTypes/AddAccountContract/addAccountContract-success-type.raml
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              example: !include ../Examples/JSON/AddAccountContract/addAccountContract-error.json
+              type: !include ../DataTypes/AddAccountContract/addAccountContract-error-type.raml
+
+  SetAccount:
+    displayName: SetAccount
+    description: The SetAccount function updates general account information. The set of information that is updated by this message is limited to data directly associated to the Account entity.
+    post:
+      is: [client_id_inforcement]
+      displayName: Set Account
+      body:
+        application/json:
+          example: !include ../Examples/JSON/SetAccount/setAccount-request.json
+          type: !include ../DataTypes/SetAccount/setAccount-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              example: !include ../Examples/JSON/SetAccount/setAccount-success.json
+              type: !include ../DataTypes/SetAccount/setAccount-success-type.raml
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              example: !include ../Examples/JSON/SetAccount/setAccount-error.json
+              type: !include ../DataTypes/SetAccount/setAccount-error-type.raml
+
+  AddContact:
+    displayName: AddContact
+    description: Creating a Account Contact using the Cayenta Account number
+    post:
+      is: [client_id_inforcement]
+      displayName: Add Contact
+      body:
+        application/json:
+          example: !include ../Examples/JSON/AddContact/addContact-request.json
+          type: !include ../DataTypes/AddContact/addContact-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              example: !include ../Examples/JSON/AddContact/addContact-success.json
+              type: !include ../DataTypes/AddContact/addContact-success-type.raml
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              example: !include ../Examples/JSON/AddContact/addContact-error.json
+              type: !include ../DataTypes/AddContact/addContact-error-type.raml
+  SetAssetExtendedAttributes:
+    displayName: SetAssetExtendedAttributes
+    description: |- 
+      The SetAssetExtendedAttributes Attributes function is used to update the extended
+      attribute information of a specific Asset.
+    post:
+      is: [client_id_inforcement]
+      displayName: Set Asset Extended Attributes
+      body:
+        application/json:
+          example: !include ../Examples/JSON/SetAssetExtendedAttributes/setAssetExtendedAttributes-request.json
+          type: !include ../DataTypes/SetAssetExtendedAttributes/setAssetExtendedAttributes-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/SetAssetExtendedAttributes/setAssetExtendedAttributes-success-type.raml
+              example: !include ../Examples/JSON/SetAssetExtendedAttributes/setAssetExtendedAttributes-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/SetAssetExtendedAttributes/setAssetExtendedAttributes-error-type.raml
+              example: !include ../Examples/JSON/SetAssetExtendedAttributes/setAssetExtendedAttributes-error.json
+  AddMeterBillCode:
+    displayName: AddMeterBillCode
+    description: The AddMeterBillCode function is used to assign meter bill codes.
+    post:
+      is: [client_id_inforcement]
+      displayName: Add Meter BillCode
+      body:
+        application/json:
+          example: !include ../Examples/JSON/AddMeterBillCode/addMeterBillCode-request.json
+          type: !include ../DataTypes/AddMeterBillCode/addMeterBillCode-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/AddMeterBillCode/addMeterBillCode-success-type.raml
+              example: !include ../Examples/JSON/AddMeterBillCode/addMeterBillCode-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/AddMeterBillCode/addMeterBillCode-error-type.raml
+              example: !include ../Examples/JSON/AddMeterBillCode/addMeterBillCode-error.json
+  AddServiceBillCode:
+    displayName: AddServiceBillCode
+    description: The AddServiceBillCode function is used to assign a service bill code.
+    post:
+      is: [client_id_inforcement]
+      displayName: Add Service Bill Code
+      body:
+        application/json:
+          example: !include ../Examples/JSON/AddServiceBillCode/addServiceBillCode-request.json
+          type: !include ../DataTypes/AddServiceBillCode/addServiceBillCode-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/AddServiceBillCode/addServiceBillCode-success-type.raml
+              example: !include ../Examples/JSON/AddServiceBillCode/addServiceBillCode-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/AddServiceBillCode/addServiceBillCode-error-type.raml
+              example: !include ../Examples/JSON/AddServiceBillCode/addServiceBillCode-error.json
+  AddRequest:
+    displayName: AddRequest
+    description: The AddRequest function generates a request.
+    post:
+      is: [client_id_inforcement]
+      displayName: Add Request
+      body:
+        application/json:
+          example: !include ../Examples/JSON/AddRequest/addRequest-request.json
+          type: !include ..//DataTypes/AddRequest/addRequest-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/AddRequest/addRequest-success-type.raml
+              example: !include ../Examples/JSON/AddRequest/addRequest-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/AddRequest/addRequest-error-type.raml
+              example: !include ../Examples/JSON/AddRequest/addRequest-error.json
+  AddAlert:
+    displayName: AddAlert
+    description: The AddAlert function is used to create an alert for a Person, Account, or Location.
+    post:
+      is: [client_id_inforcement]
+      displayName: Add Alert
+      body:
+        application/json:
+          example: !include ../Examples/JSON/AddAlert/addAlert-request.json
+          type: !include ../DataTypes/AddAlert/addAlert-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/AddAlert/addAlert-success-type.raml
+              example: !include ../Examples/JSON/AddAlert/addAlert-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/AddAlert/addAlert-error-type.raml
+              example: !include ../Examples/JSON/AddAlert/addAlert-error.json
+  GetAccount:
+    displayName: GetAccount
+    description: The GetAccount function returns general Account information for an Account.
+    post:
+      is: [client_id_inforcement]
+      displayName: Get Account
+      body:
+        application/json:
+          example: !include ../Examples/JSON/GetAccount/getAccount-request.json
+          type: !include ../DataTypes/GetAccount/getAccount-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetAccount/getAccount-success-type.raml
+              example: !include ../Examples/JSON/GetAccount/getAccount-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetAccount/getAccount-error-type.raml
+              example: !include ../Examples/JSON/GetAccount/getAccount-error.json
+  GetAddressRecords:
+    displayName: GetAddressRecords
+    description: |-
+      The GetAddressRecords function returns a person's addresses and indicates which one is
+      the person address and which ones are account addresses.
+    post:
+      is: [client_id_inforcement]
+      displayName: Get Address Records
+      body:
+        application/json:
+          example: !include ../Examples/JSON/GetAddressRecords/getAddressRecords-request.json
+          type: !include ../DataTypes/GetAddressRecords/getAddressRecords-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetAddressRecords/getAddressRecords-success-type.raml
+              example: !include ../Examples/JSON/GetAddressRecords/getAddressRecords-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetAddressRecords/getAddressRecords-error-type.raml
+              example: !include ../Examples/JSON/GetAddressRecords/getAddressRecords-error.json
+  GetPerson:
+    displayName: GetPerson
+    description: |-
+      The GetPerson function is used to retrieve Person information for a specified Person
+      Number or Person ID. The GetPerson function allows for multiple matching Person records
+      if more than one Person record matches the retrieve profile.
+    post:
+      is: [client_id_inforcement]
+      displayName: Get Person
+      body:
+        application/json:
+          example: !include ../Examples/JSON/GetPerson/getPerson-request.json
+          type: !include ../DataTypes/GetPerson/getPerson-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetPerson/getPerson-success-type.raml
+              example: !include ../Examples/JSON/GetPerson/getPerson-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetPerson/getPerson-error-type.raml
+              example: !include ../Examples/JSON/GetPerson/getPerson-error.json
+  GetPhoneRecords:
+    displayName: GetPhoneRecords
+    description: |-
+      The GetPhoneRecords function returns a person's phone numbers and indicates which one
+      is the person default number and which ones are account default numbers.
+    post:
+      is: [client_id_inforcement]
+      displayName: Get Phone Records
+      body:
+        application/json:
+          example: !include ../Examples/JSON/GetPhoneRecords/getPhoneRecords-request.json
+          type: !include ../DataTypes/GetPhoneRecords/getPhoneRecords-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetPhoneRecords/getPhoneRecords-success-type.raml
+              example: !include ../Examples/JSON/GetPhoneRecords/getPhoneRecords-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetPhoneRecords/getPhoneRecords-error-type.raml
+              example: !include ../Examples/JSON/GetPhoneRecords/getPhoneRecords-error.json
+  AddPerson:
+    displayName: AddPerson
+    description: |- 
+      The AddPerson function creates a new Person record. The function can include multiple addresses and phone numbers. 
+      It assumes that the last record processed is the default address/phone number for the person.
+    post:
+      is: [client_id_inforcement]
+      displayName: Add Person
+      body:
+        application/json:
+          example: !include ../Examples/JSON/AddPerson/addPerson-request.json
+          type: !include ../DataTypes/AddPerson/addPerson-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/AddPerson/addPerson-success-type.raml
+              example: !include ../Examples/JSON/AddPerson/addPerson-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/AddPerson/addPerson-error-type.raml
+              example: !include ../Examples/JSON/AddPerson/addPerson-error.json
+
+  GetAccountServiceLocations:
+    displayName: GetAccountServiceLocations
+    description: |- 
+      The GetAccountServiceLocations function returns a list of all current
+      Locations/Services associated with an Account.
+    post:
+      is: [client_id_inforcement]
+      displayName: Get Account Service Locations
+      body:
+        application/json:
+          example: !include ../Examples/JSON/GetAccountServiceLocations/getAccountServiceLocations-request.json
+          type: !include ../DataTypes/GetAccountServiceLocations/getAccountServiceLocations-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetAccountServiceLocations/getAccountServiceLocations-success-type.raml
+              example: !include ../Examples/JSON/GetAccountServiceLocations/getAccountServiceLocations-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetAccountServiceLocations/getAccountServiceLocations-error-type.raml
+              example: !include ../Examples/JSON/GetAccountServiceLocations/getAccountServiceLocations-error.json
+  GetBillDates:
+    displayName: GetBillDates
+    description: |- 
+      The GetBillDates function returns the detail information regarding the bill based on an
+      Account and a Date range.
+    post:
+      is: [client_id_inforcement]
+      displayName: Get Bill Dates
+      body:
+        application/json:
+          example: !include ../Examples/JSON/GetBillDates/getBillDates-request.json
+          type: !include ../DataTypes/GetBillDates/getBillDates-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetBillDates/getBillDates-success-type.raml
+              example: !include ../Examples/JSON/GetBillDates/getBillDates-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetBillDates/getBillDates-error-type.raml
+              example: !include ../Examples/JSON/GetBillDates/getBillDates-error.json
+  GetBillDetails:
+    displayName: GetBillDetails
+    description: The GetBillDetails function returns the detail information regarding one bill for an Account.
+    post:
+      is: [client_id_inforcement]
+      displayName: Get Bill Details
+      body:
+        application/json:
+          example: !include ../Examples/JSON/GetBillDetails/getBillDetails-request.json
+          type: !include ../DataTypes/GetBillDetails/getBillDetails-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetBillDetails/getBillDetails-success-type.raml
+              example: !include ../Examples/JSON/GetBillDetails/getBillDetails-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetBillDetails/getBillDetails-error-type.raml
+              example: !include ../Examples/JSON/GetBillDetails/getBillDetails-error.json
+  GetAvgConsumption:
+    displayName: GetAvgConsumption
+    description: |-
+      The GetAvgConsumption function is used to retrieve average consumption for specific
+      location, service and year.
+    post:
+      is: [client_id_inforcement]
+      displayName: Get Average Consumption
+      body:
+        application/json:
+          example: !include ../Examples/JSON/GetAvgConsumption/getAvgConsumption-request.json
+          type: !include ../DataTypes/GetAvgConsumption/getAvgConsumption-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetAvgConsumption/getAvgConsumption-success-type.raml
+              example: !include ../Examples/JSON/GetAvgConsumption/getAvgConsumption-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetAvgConsumption/getAvgConsumption-error-type.raml
+              example: !include ../Examples/JSON/GetAvgConsumption/getAvgConsumption-error.json
+  AddAddressRecord:
+    displayName: AddAddressRecord
+    description: |-
+      The AddAddressRecord function creates a person addresses and optionally makes it the
+      default address.
+    post:
+      is: [client_id_inforcement]
+      displayName: Add Address Record
+      body:
+        application/json:
+          example: !include ../Examples/JSON/AddAddressRecord/addAddressRecord-request.json
+          type: !include ../DataTypes/AddAddressRecord/addAddressRecord-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/AddAddressRecord/addAddressRecord-success-type.raml
+              example: !include ../Examples/JSON/AddAddressRecord/addAddressRecord-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/AddAddressRecord/addAddressRecord-error-type.raml
+              example: !include ../Examples/JSON/AddAddressRecord/addAddressRecord-error.json
+  AddLocationService:
+    displayName: AddLocationService
+    description: |-
+      The AddLocationService function is used to create new Location/Service and Meter records,
+      including the installed Service Bill Code, Tax Codes, and Installed Meter Bill Codes.
+    post:
+      is: [client_id_inforcement]
+      displayName: Add Location Service
+      body:
+        application/json:
+          example: !include ../Examples/JSON/AddLocationService/addLocationService-request.json
+          type: !include ../DataTypes/AddLocationService/addLocationService-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/AddLocationService/addLocationService-success-type.raml
+              example: !include ../Examples/JSON/AddLocationService/addLocationService-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/AddLocationService/addLocationService-error-type.raml
+              example: !include ../Examples/JSON/AddLocationService/addLocationService-error.json
+  AddAccountRelationship:
+    displayName: AddAccountRelationship
+    description: |-
+      The AddAccountRelationship function is used to create a person-to-person relationship
+      relevant to a specific account.
+    post:
+      is: [client_id_inforcement]
+      displayName: Add Account Relationship
+      body:
+        application/json:
+          example: !include ../Examples/JSON/AddAccountRelationship/addAccountRelationship-request.json
+          type: !include ../DataTypes/AddAccountRelationship/addAccountRelationship-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/AddAccountRelationship/addAccountRelationship-success-type.raml
+              example: !include ../Examples/JSON/AddAccountRelationship/addAccountRelationship-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/AddAccountRelationship/addAccountRelationship-error-type.raml
+              example: !include ../Examples/JSON/AddAccountRelationship/addAccountRelationship-error.json
+  AddBillableHoldings:
+    displayName: AddBillableHoldings
+    description: |-
+      The AddBillableHoldings function creates a new Billable Holdings for a given Location.
+      When a customer enrolls in PrePay they need to create all of the entities required to bill
+      them in CU. This creation is done via API calls in the CSS. The creation process needs to
+      include adding the billable holdings for the LIGHT service.
+    post:
+      is: [client_id_inforcement]
+      displayName: Add Billable Holdings
+      body:
+        application/json:
+          example: !include ../Examples/JSON/AddBillableHoldings/addBillableHoldings-request.json
+          type: !include ../DataTypes/AddBillableHoldings/addBillableHoldings-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/AddBillableHoldings/addBillableHoldings-success-type.raml
+              example: !include ../Examples/JSON/AddBillableHoldings/addBillableHoldings-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/AddBillableHoldings/addBillableHoldings-error-type.raml
+              example: !include ../Examples/JSON/AddBillableHoldings/addBillableHoldings-error.json
+  AddDeposit:
+    displayName: AddDeposit
+    description: |-
+      The AddDeposit function is used to create a deposit.
+    post:
+      is: [client_id_inforcement]
+      displayName: Add Deposit
+      body:
+        application/json:
+          example: !include ../Examples/JSON/AddDeposit/addDeposit-request.json
+          type: !include ../DataTypes/AddDeposit/addDeposit-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/AddDeposit/addDeposit-success-type.raml
+              example: !include ../Examples/JSON/AddDeposit/addDeposit-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/AddDeposit/addDeposit-error-type.raml
+              example: !include ../Examples/JSON/AddDeposit/addDeposit-error.json
+  AddMovein:
+    displayName: AddMovein
+    description: |-
+      The AddMoveIn function creates a new scheduled Move-In transaction. This would enable
+      the utility to review all Move-In requests before they are processed by the batch MIMO
+      process.
+    post:
+      is: [client_id_inforcement]
+      displayName: Add Movein
+      body:
+        application/json:
+          example: !include ../Examples/JSON/AddMovein/addMovein-request.json
+          type: !include ../DataTypes/AddMovein/addMovein-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/AddMovein/addMovein-success-type.raml
+              example: !include ../Examples/JSON/AddMovein/addMovein-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/AddMovein/addMovein-error-type.raml
+              example: !include ../Examples/JSON/AddMovein/addMovein-error.json
+  GetAlert:
+    displayName: GetAlert
+    description: |-
+      The GetAlert function is used to retrieve alerts for a Person, Account, or Location. The API
+      accepts an ownership code and key, or an account number, or a location number, or aperson number, 
+      plus a specific addressee code as input parameters and outputs all active
+      alerts for the specified account/location/person.
+    post:
+      is: [client_id_inforcement]
+      displayName: Get Alert
+      body:
+        application/json:
+          example: !include ../Examples/JSON/GetAlert/getAlert-request.json
+          type: !include ../DataTypes/GetAlert/getAlert-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetAlert/getAlert-success-type.raml
+              example: !include ../Examples/JSON/GetAlert/getAlert-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetAlert/getAlert-error-type.raml
+              example: !include ../Examples/JSON/GetAlert/getAlert-error.json
+  GetBillableHoldings:
+    displayName: GetBillableHoldings
+    description: |-
+      The GetBillableHoldings function returns a list of all billable holdings which match the search criteria.
+    post:
+      is: [client_id_inforcement]
+      displayName: Get Billable Holdings
+      body:
+        application/json:
+          example: !include ../Examples/JSON/GetBillableHoldings/getBillableHoldings-request.json
+          type: !include ../DataTypes/GetBillableHoldings/getBillableHoldings-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetBillableHoldings/getBillableHoldings-success-type.raml
+              example: !include ../Examples/JSON/GetBillableHoldings/getBillableHoldings-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetBillableHoldings/getBillableHoldings-error-type.raml
+              example: !include ../Examples/JSON/GetBillableHoldings/getBillableHoldings-error.json
+  GetConsumptionHistory:
+    displayName: GetConsumptionHistory
+    description: |-
+      The GetConsumptionHistory function returns a list of all meter/reading information for a Service at a Location for a specific Account. The Account to be used for this function may be identified using either the Account’s unique UMS Account number (<ACCOUNT_NO>), or an externally defined Account Identifier (<ACCOUNT_NO_CUSTOM>).
+    post:
+      is: [client_id_inforcement]
+      displayName: Get Consumption History
+      body:
+        application/json:
+          example: !include ../Examples/JSON/GetConsumptionHistory/getConsumptionHistory-request.json
+          type: !include ../DataTypes/GetConsumptionHistory/getConsumptionHistory-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetConsumptionHistory/getConsumptionHistory-success-type.raml
+              example: !include ../Examples/JSON/GetConsumptionHistory/getConsumptionHistory-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetConsumptionHistory/getConsumptionHistory-error-type.raml
+              example: !include ../Examples/JSON/GetConsumptionHistory/getConsumptionHistory-error.json
+  GetLocation:
+    displayName: GetLocation
+    description: |-
+      The GetLocation function is used to retrieve Location information for a specified Location Number or Custom
+      Location ID. The GetLocation function can also be called using the Cayenta Meter number
+    post:
+      is: [client_id_inforcement]
+      displayName: Get Location
+      body:
+        application/json:
+          example: !include ../Examples/JSON/GetLocation/getLocation-request.json
+          type: !include ../DataTypes/GetLocation/getLocation-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetLocation/getLocation-success-type.raml
+              example: !include ../Examples/JSON/GetLocation/getLocation-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetLocation/getLocation-error-type.raml
+              example: !include ../Examples/JSON/GetLocation/getLocation-error.json
+  GetInstalledServices:
+    displayName: GetInstalledServices
+    description: |-
+      The GetInstalledServices function is used to return all installed services for a given location.
+    post:
+      is: [client_id_inforcement]
+      displayName: Get Installed Services
+      body:
+        application/json:
+          example: !include ../Examples/JSON/GetInstalledServices/getInstalledServices-request.json
+          type: !include ../DataTypes/GetInstalledServices/getInstalledServices-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetInstalledServices/getInstalledServices-success-type.raml
+              example: !include ../Examples/JSON/GetInstalledServices/getInstalledServices-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetInstalledServices/getInstalledServices-error-type.raml
+              example: !include ../Examples/JSON/GetInstalledServices/getInstalledServices-error.json
+  GetMeterBillCode:
+    displayName: GetMeterBillCode
+    description: |-
+      The GetMeterBillCode function is used to retrieve Installed Meter Bill Code information for a specified Cayenta Account Number and/or Cayenta Location Number.
+    post:
+      is: [client_id_inforcement]
+      displayName: Get Meter Bill Code
+      body:
+        application/json:
+          example: !include ../Examples/JSON/GetMeterBillCode/getMeterBillCode-request.json
+          type: !include ../DataTypes/GetMeterBillCode/getMeterBillCode-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetMeterBillCode/getMeterBillCode-success-type.raml
+              example: !include ../Examples/JSON/GetMeterBillCode/getMeterBillCode-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetMeterBillCode/getMeterBillCode-error-type.raml
+              example: !include ../Examples/JSON/GetMeterBillCode/getMeterBillCode-error.json
+  GetServiceBillCode:
+    displayName: GetServiceBillCode
+    description: |-
+      The GetServiceBillCode function is used to retrieve Installed Service Bill Code information for a specified Cayenta Account Number and/or Cayenta Location Number.
+    post:
+      is: [client_id_inforcement]
+      displayName: Get Service Bill Code
+      body:
+        application/json:
+          example: !include ../Examples/JSON/GetServiceBillCode/getServiceBillCode-request.json
+          type: !include ../DataTypes/GetServiceBillCode/getServiceBillCode-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetServiceBillCode/getServiceBillCode-success-type.raml
+              example: !include ../Examples/JSON/GetServiceBillCode/getServiceBillCode-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetServiceBillCode/getServiceBillCode-error-type.raml
+              example: !include ../Examples/JSON/GetServiceBillCode/getServiceBillCode-error.json
+  GetServiceOrder:
+    displayName: GetServiceOrder
+    description: |-
+      The GetServiceOrder function returns the service order details given the service order number.
+    post:
+      is: [client_id_inforcement]
+      displayName: Get Service Order
+      body:
+        application/json:
+          example: !include ../Examples/JSON/GetServiceOrder/getServiceOrder-request.json
+          type: !include ../DataTypes/GetServiceOrder/getServiceOrder-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetServiceOrder/getServiceOrder-success-type.raml
+              example: !include ../Examples/JSON/GetServiceOrder/getServiceOrder-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include ../DataTypes/GetServiceOrder/getServiceOrder-error-type.raml
+              example: !include ../Examples/JSON/GetServiceOrder/getServiceOrder-error.json
+
+  SetAccountBillingAddress:
+    displayName: SetAccountBillingAddress
+    description: |-
+      The SetAccountBillingAddress function creates a new record in the Person’s Mailing Address entity rather than updating the previous record
+    post:
+      is: [client_id_inforcement]
+      displayName: SetAccountBillingAddress
+      body:
+        application/json:
+          example: !include /Examples/JSON/SetAccountBillingAddress/setAccountBillingAddress-request.json
+          type: !include /DataTypes/SetAccountBillingAddress/setAccountBillingAddress-request-type.raml
+      responses:
+        "201":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include /DataTypes/SetAccountBillingAddress/setAccountBillingAddress-success-type.raml
+              example: !include /Examples/JSON/SetAccountBillingAddress/setAccountBillingAddress-success.json
+        "400":
+          headers:
+            Content-Type:
+              example: "application/json"
+          body:
+            application/json:
+              type: !include /DataTypes/SetAccountBillingAddress/setAccountBillingAddress-error.raml
+              example: !include /Examples/JSON/SetAccountBillingAddress/setAccountBillingAddress-error.json
+                         

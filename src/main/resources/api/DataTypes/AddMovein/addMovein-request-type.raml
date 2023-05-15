@@ -1,0 +1,28 @@
+#%RAML 1.0 DataType 
+type: object
+# additionalProperties: false
+properties:
+  Request:
+    type: object
+    # additionalProperties: false
+    properties:
+      AddMoveIn:
+        type: object
+        # additionalProperties: false
+        properties:
+          Params:
+            type: object
+            # additionalProperties: false
+            properties:
+              ACCOUNT_NO:
+                type: integer
+                required: false
+              LOCATION_NO:
+                type: integer
+                required: false
+              SERVICE_SEQ:
+                type: number
+                required: false
+              EFFECTIVE_DT:
+                type: string
+                required: false

@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "GetAvgConsumption": {
+      "Params": {
+        "STATUS": -3,
+        "STATUS_DESC": "No Average consumption found for service seq:1."
+      },
+      "STATUS": 0
+    }
+  }
+}

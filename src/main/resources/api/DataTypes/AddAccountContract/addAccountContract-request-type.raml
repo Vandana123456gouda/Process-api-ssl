@@ -1,0 +1,193 @@
+#%RAML 1.0 DataType 
+type: object
+# additionalProperties: false
+properties:
+  Request:
+    type: object
+    # additionalProperties: false
+    properties:
+      AddAccountContract:
+        type: object
+        # additionalProperties: false
+        properties:
+          Params:
+            type: object
+            # additionalProperties: false
+            properties:
+              ACCOUNT_NO:
+                type: number
+                required: true
+              LOCATION_NO:
+                type: number
+                required: true
+              SERVICE_SEQ:
+                type: number
+                required: true
+              CONTRACT_TP:
+                type: string
+                maxLength: 5
+                required: true
+              START_DT:
+                type: integer
+                required: false
+              END_DT:
+                type: integer
+                required: false
+              CONTRACT_CD:
+                type: string
+                maxLength: 5
+                required: false
+              FIRM_DEMAND_YN:
+                type: string
+                maxLength: 1
+                required: false
+              INTERRUPT_DEMAND_YN:
+                type: string
+                maxLength: 1
+                required: false
+              INCREMENT_DEMAND_YN:
+                type: string
+                maxLength: 1
+                required: false
+              STANDBY_DEMAND_YN:
+                type: string
+                maxLength: 1
+                required: false
+              FD_CONTRACT_AMT:
+                type: number
+                required: false
+              ID_BTHRU_DURATION:
+                type: number
+                required: false
+              ID_OVERRIDE_DISCNT:
+                type: string
+                maxLength: 5
+                required: false
+              ID_EXEMPT_AMT:
+                type: number
+                required: false
+              ID_EXEMPT_START_DT:
+                type: string
+                required: false
+              ID_EXEMPT_END_DT:
+                type: string
+                required: false
+              CD_CONTRACT_AMT:
+                type: number
+                required: false
+              CD_EXEMPT_AMT:
+                type: number
+                required: false
+              CD_EXEMPT_START_DTM:
+                type: string
+                required: false
+              CD_EXEMPT_END_DTM:
+                type: string
+                required: false
+              CD_EXEMPT_HRS:
+                type: number
+                required: false
+              SD_CONTRACT_AMT:
+                type: number
+                required: false
+              CONTRACT_CMTS:
+                type: string
+                maxLength: 2000
+                required: false
+              REFERENCE_ONLY_YN:
+                type: string
+                maxLength: 1
+                required: false
+              PREPAID_QTY:
+                type: number
+                required: false
+              PREPAY_BILL_CD:
+                type: string
+                maxLength: 5
+                required: false
+              EST_ANNUAL_CONS_AMT:
+                type: number
+                required: false
+              PREPAY_ANNUALLY_YN:
+                type: string
+                maxLength: 1
+                required: false
+              PREPAY_BILLED_DTM:
+                type: string
+                required: false
+              CONS_BILLED_TO_DT:
+                type: number
+                required: false
+              METER_SEQ:
+                type: number
+                required: false
+              FD_PERCENT_TO_EXCEED:
+                type: number
+                required: false
+              FD_GRACE_PER:
+                type: number
+                required: false
+              FD_EVAL_PER:
+                type: number
+                required: false
+              FD_MAXIMUM_AMT:
+                type: number
+                required: false
+              IB_SEQ:
+                type: number
+                required: false
+              CONTRACT_TRUEUP_YN:
+                type: string
+                maxLength: 1
+                required: false
+              PREPAID_AMT:
+                type: number
+                required: false
+              CREDIT_CAP_BILL_CD_LIST:
+                type: string
+                maxLength: 2000
+                required: false
+              CREDIT_CAP_PERC:
+                type: number
+                required: false
+              ATTRIBUTE:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    ATTRIBUTE_CODE:
+                      type: string
+                      maxLength: 15
+                      required: false
+                    ATTRIBUTE_TYPE:
+                      type: string
+                      maxLength: 40
+                      required: false
+                    FIRST_EFF_DAY_DT:
+                      type: integer
+                      required: false
+                    LAST_EFF_DAY_DT:
+                      type: any
+                      required: false
+                    VALUE_BOOLEAN:
+                      type: string
+                      maxLength: 1
+                      required: false
+                    VALUE_NUMERIC:
+                      type: number
+                      required: false
+                    VALUE_STRING:
+                      type: string
+                      maxLength: 40
+                      required: false
+                    VALUE_DATE:
+                      type: string
+                      required: false
+                    CONTRACT_CMTS:
+                      type: string
+                      maxLength: 2000
+                      required: false
+
+                
+                  
+                  

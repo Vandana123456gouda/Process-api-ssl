@@ -1,0 +1,36 @@
+{
+  "Reply": {
+    "GetInstalledServices": {
+      "Params": {
+        "INSTALLED_SERVICE": {
+          "LOCATION_NO": 3000003,
+          "SERV_SEQ": 1,
+          "SERVICE_TP": "UGASM",
+          "SERVICE_PURPOSE": "GA",
+          "SERVICE_FDESC": "Utility SNG-LPG Metered",
+          "SERVICE_SDESC": "UT SNG-LPG Mtr",
+          "SERV_IDENTIFIER": "",
+          "SERV_IDENTIFIER2": "",
+          "ADDRESS": "1722 10TH AVE A",
+          "METERED_YN": "T",
+          "SET_DT": 20170119,
+          "PULL_DT": "",
+          "SO_SET_FROM": "",
+          "SO_PULLED_FROM": "",
+          "SC_RESERVED_FROM": "",
+          "SF_RESERVED_FROM": "",
+          "ROUTE_NO_DFLT": 110105,
+          "SORT_SEQ": 110,
+          "BYPASS_BILL_YN": "F",
+          "SERV_DISTRICT_CD": "",
+          "BYPASS_MOVEIN_YN": "F",
+          "SERV_CMTS": "US",
+          "A_GEOLAT": 21.292167009,
+          "A_GEOLONG": -157.796804019
+        },
+        "STATUS": 0
+      },
+      "STATUS": 0
+    }
+  }
+}

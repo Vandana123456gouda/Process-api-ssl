@@ -1,0 +1,12 @@
+{
+  "Reply": {
+    "SetLocation": {
+      "Params": {
+        "LOCATION_NO": "",
+        "STATUS": "",
+        "STATUS_DESC": ""
+      },
+      "STATUS": ""
+    }
+  }
+}

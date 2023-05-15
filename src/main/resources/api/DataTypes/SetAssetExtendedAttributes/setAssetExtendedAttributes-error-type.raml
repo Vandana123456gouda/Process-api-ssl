@@ -1,0 +1,24 @@
+#%RAML 1.0 DataType 
+type: object
+properties:
+  Reply:
+    type: object
+    properties:
+      SetAssetExtendedAttributes:
+        type: object
+        properties:
+          Params:
+            type: object
+            properties:
+              STATUS:
+                type: integer
+                example: 230
+                required: false
+              STATUS_DESC:
+                type: string
+                example: Unable to create Asset Extended Attributes!
+                required: false
+          STATUS:
+            type: integer
+            example: 0
+            required: false

@@ -1,0 +1,527 @@
+#%RAML 1.0 DataType 
+type: object
+properties:
+  Reply:
+    type: object
+    properties:
+      GetServiceOrder:
+        type: object
+        properties:
+          Params:
+            type: object
+            properties:
+              STATUS:
+                type: integer
+                required: false
+              ACTION_NO:
+                type: integer
+                required: false
+              ACTION_CD:
+                type: string
+                required: false
+              ASSIGN_STATUS:
+                type: string
+                required: false
+              CREW_ID:
+                type: string
+                required: false
+              ACTION_STAT:
+                type: string
+                required: false
+              ACCOUNT_NO:
+                type: integer
+                required: false
+              LOCATION_NO:
+                type: integer
+                required: false
+              LOCATION_CLASS:
+                type: string
+                required: false
+              PERSON_NO:
+                type: integer
+                required: false
+              PHONE_NO:
+                type: string
+                required: false
+              V_NAME:
+                type: string
+                required: false
+              ACTION_FDESC:
+                type: string
+                required: false
+              ACTION_INSTRUCT:
+                type: string
+                required: false
+              ACTION_CMTS:
+                type: string
+                required: false
+              EFFECTIVE_DT:
+                type: integer
+                required: false
+              CLOSE_DTM:
+                type: integer
+                required: false
+              PRIORITY_OVRD:
+                type: integer
+                required: false
+              ACTION_SEQ:
+                type: string
+                required: false
+              ACTION_TP:
+                type: string
+                required: false
+              ASSET_RESTRICTED_YN:
+                type: string
+                required: false
+              ASSET_TP:
+                type: string
+                required: false
+              DOCUMENT_NM:
+                type: string
+                required: false
+              FOREIGN_ID:
+                type: string
+                required: false
+              GEO_AREA_CD:
+                type: string
+                required: false
+              OVERDUE_AMT:
+                type: string
+                required: false
+              REQUEST_NO:
+                type: integer
+                required: false
+              REQUEST_TP:
+                type: string
+                required: false
+              SERVICE_TP:
+                type: string
+                required: false
+              SOURCE_CD:
+                type: string
+                required: false
+              SOURCE_ID:
+                type: integer
+                required: false
+              SUBSYSTEM_CD:
+                type: string
+                required: false
+              SUSP_COLL_YN_OVRD:
+                type: string
+                required: false
+              DISPATCHER_ID:
+                type: string
+                required: false
+              DISPATCH_DTM:
+                type: integer
+                required: false
+              DISPATCH_CMTS:
+                type: string
+                required: false
+              PRINT_Q_OVRD:
+                type: string
+                required: false
+              REQUESTOR_NO:
+                type: string
+                required: false
+              REQUESTOR_ADDR:
+                type: string
+                required: false
+              REQUESTOR_EMAIL:
+                type: string
+                required: false
+              REQUESTOR_PHONE:
+                type: string
+                required: false
+              REQUESTOR_FNM:
+                type: string
+                required: false
+              REQUESTOR_LNM:
+                type: string
+                required: false
+              DISTRIBUTION_OVRD:
+                type: string
+                required: false
+              OLD_DISTRIBUTION_CD:
+                type: string
+                required: false
+              REDISTRIBUTED_BY:
+                type: string
+                required: false
+              RESOLUTION_DT:
+                type: integer
+                required: false
+              RESOLUTION_TM:
+                type: string
+                required: false
+              RESOLUTION_CD:
+                type: string
+                required: false
+              RESOLVED_BY:
+                type: string
+                required: false
+              RESOURCE_TP:
+                type: string
+                required: false
+              RESOURCE_ID:
+                type: string
+                required: false
+              SCHEDULED_DT:
+                type: integer
+                required: false
+              SCHEDULED_TM:
+                type: string
+                required: false
+              ADD_BY:
+                type: string
+                required: false
+              ADD_DTM:
+                type: integer
+                required: false
+              TRANSACTION_NO:
+                type: integer
+                required: false
+              GEOLAT:
+                type: number
+                required: false
+              GEOLONG:
+                type: number
+                required: false
+              V_SADDRESS:
+                type: string
+                required: false
+              CITY:
+                type: string
+                required: false
+              METERS:
+                type: object
+                properties:
+                  METER:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        METER_TP:
+                          type: string
+                          required: false
+                        SERIAL_NO:
+                          type: integer
+                          required: false
+                        MULTIPLIER:
+                          type: number
+                          required: false
+                        METER_STAT:
+                          type: string
+                          required: false
+                        METER_NEW_STAT:
+                          type: string
+                          required: false
+                        SERVICE_SEQ:
+                          type: integer
+                          required: false
+                        SERVICE_TP:
+                          type: string
+                          required: false
+                        METER_SEQ:
+                          type: integer
+                          required: false
+                        METER_NO:
+                          type: integer
+                          required: false
+                        LOCATION_NO:
+                          type: integer
+                          required: false
+                        ACTION_METER_SEQ:
+                          type: integer
+                          required: false
+                        EXT_ASSET_NO:
+                          type: string
+                          required: false
+                        LINE_PRESSURE_SIZE:
+                          type: string
+                          required: false
+                        SITUAT_CD:
+                          type: string
+                          required: false
+                        SUBSIT_CD:
+                          type: string
+                          required: false
+                        CYCLE_CD:
+                          type: integer
+                          required: false
+                        ROUTE_NO:
+                          type: integer
+                          required: false
+                        ROUTE_SEQ:
+                          type: integer
+                          required: false
+                        MTR_CHG_TP:
+                          type: string
+                          required: false
+                        CT_NUMER:
+                          type: string
+                          required: false
+                        CT_DENOM:
+                          type: string
+                          required: false
+                        PT_NUMER:
+                          type: string
+                          required: false
+                        PT_DENOM:
+                          type: string
+                          required: false
+                        AREA_SERVED:
+                          type: string
+                          required: false
+                        METER_LOCATION_ALERT:
+                          type: integer
+                          required: false
+                        FULL_SCALE_DEM_DIAL:
+                          type: string
+                          required: false
+                        INST_LOC_1:
+                          type: string
+                          required: false
+                        INST_LOC_2:
+                          type: string
+                          required: false
+                        INST_LOC_3:
+                          type: integer
+                          required: false
+                        COMMENTS:
+                          type: string
+                          required: false
+                        CONNECTION_NO:
+                          type: integer
+                          required: false
+                        CONN_NO_SEQ:
+                          type: integer
+                          required: false
+                        CONN_LOC_DESC:
+                          type: string
+                          required: false
+                        LINKED_METER_YN:
+                          type: string
+                          required: false
+                        READ_ENTRY_CD:
+                          type: string
+                          required: false
+                        READ_TP:
+                          type: string
+                          required: false
+                        READ_DT:
+                          type: integer
+                          required: false
+                        READ_TM:
+                          type: integer
+                          required: false
+                        REGISTERS:
+                          type: object
+                          properties:
+                            REGISTER:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  REGISTER_NO:
+                                    type: integer
+                                    required: false
+                                  READ_TP:
+                                    type: string
+                                    required: false
+                                  READ_AMT:
+                                    type: integer
+                                    required: false
+                                  REGISTER_TP:
+                                    type: string
+                                    required: false
+                                  DIALS_READ_OVRD:
+                                    type: integer
+                                    required: false
+                                  DETAIL_SEQ:
+                                    type: integer
+                                    required: false
+                                  SEAL_NO:
+                                    type: string
+                                    required: false
+                                  REG_BEHAV:
+                                    type: string
+                                    required: false
+                                  MULTIPLIER:
+                                    type: integer
+                                    required: false
+                                  PERIOD_OF_DAY_CD:
+                                    type: string
+                                    required: false
+                                  REG_ON_YN:
+                                    type: string
+                                    required: false
+                                  REG_ONOFF_DT:
+                                    type: integer
+                                    required: false
+                                  PREV_BILL_DT:
+                                    type: integer
+                                    required: false
+                                  PREV_EXCEPTION_CD:
+                                    type: string
+                                    required: false
+                                  PREV_READ_AMT:
+                                    type: integer
+                                    required: false
+                                  PREV_READ_DT:
+                                    type: integer
+                                    required: false
+                                  PREV_READ_TM:
+                                    type: integer
+                                    required: false
+                                  PREV_READ_TP:
+                                    type: string
+                                    required: false
+                                  PREV_READ_ENTRY_CD:
+                                    type: string
+                                    required: false
+                                  PREV_SEAL_NO:
+                                    type: string
+                                    required: false
+                                  REG_CHG_TP:
+                                    type: string
+                                    required: false
+                                  DEVICE_NO:
+                                    type: integer
+                                    required: false
+                                  DEVICE_SERIAL_NO:
+                                    type: integer
+                                    required: false
+                                  DEVICE_TP:
+                                    type: string
+                                    required: false
+                                  READER_EXCEPTION_CD:
+                                    type: string
+                                    required: false
+                                  READER_CMTS:
+                                    type: string
+                                    required: false
+              DEVICES:
+                type: object
+                properties:
+                  DEVICE:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        DEV_CHG_TP:
+                          type: string
+                          required: false
+                        REGISTER_NO:
+                          type: integer
+                          required: false
+                        SERIAL_NO:
+                          type: integer
+                          required: false
+                        METER_NO:
+                          type: integer
+                          required: false
+                        METER_SERIAL_NO:
+                          type: integer
+                          required: false
+                        DEVICE_NO:
+                          type: integer
+                          required: false
+                        DEVICE_SERIAL_NO:
+                          type: integer
+                          required: false
+              HOLDINGS:
+                type: object
+                properties:
+                  HOLDING:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        ACTION_ASSET_SEQ:
+                          type: integer
+                          required: false
+                        LOCATION_NO:
+                          type: integer
+                          required: false
+                        SERVICE_SEQ:
+                          type: integer
+                          required: false
+                        ASSET_TP:
+                          type: string
+                          required: false
+                        CONFIG_CD:
+                          type: string
+                          required: false
+                        COUNT:
+                          type: string
+                          required: false
+              SERVICE_LOCATIONS:
+                type: object
+                properties:
+                  SERVICE_LOCATION:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        LOCATION_NO:
+                          type: integer
+                          required: false
+                        SERVICE_SEQ:
+                          type: integer
+                          required: false
+                        SERVICE_TP:
+                          type: string
+                          required: false
+              COMMENTS:
+                type: object
+                properties:
+                  COMMENT:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        TRANSACTION_NO:
+                          type: integer
+                          required: false
+                        ADD_BY:
+                          type: string
+                          required: false
+                        ADD_DTM:
+                          type: integer
+                          required: false
+                        CREW_ID:
+                          type: string
+                          required: false
+                        ASSIGN_STATUS:
+                          type: string
+                          required: false
+                        COMMENT_CD:
+                          type: string
+                          required: false
+                        SEQ:
+                          type: integer
+                          required: false
+                        CHANGE_CMTS:
+                          type: string
+                          required: false
+              RESOLUTIONS:
+                type: object
+                properties:
+                  RESOLUTION:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        RESOLUTION_CD:
+                          type: string
+                          required: false
+                        RESOLUTION_SDESC:
+                          type: string
+                          required: false
+                        RESOLUTION_FDESC:
+                          type: string
+                          required: false
+          STATUS:
+            type: integer
+            required: false

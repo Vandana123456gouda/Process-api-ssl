@@ -1,0 +1,11 @@
+{
+  "Request": {
+    "GetBillDetails": {
+      "Params": {
+        "ACCOUNT_NO": 2000000,
+        "BILL_RUN_DT": "20221116",
+        "BILL_RUN_TM": "131748"
+      }
+    }
+  }
+}

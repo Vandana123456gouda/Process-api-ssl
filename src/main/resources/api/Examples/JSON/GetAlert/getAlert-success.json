@@ -1,0 +1,24 @@
+{
+  "Reply": {
+    "GetAlert": {
+      "Params": {
+        "ALERT_DATA": {
+          "ALERT": {
+            "OWNERSHIP_CD": "ACCT",
+            "ALERT_KEY": 2000001,
+            "ADDRESSEE_CD": "ALL",
+            "ALERT_CD": "AUTOP",
+            "ALERT_FDESC": "Autopay Customer",
+            "START_DT": 20221017100934,
+            "END_DT": "",
+            "ALERT_CMTS": "",
+            "ALERT_PRIORITY_NO": ""
+          }
+        },
+        "STATUS": 0,
+        "STATUS_DESC": "Alert found for ACCT 2000001"
+      },
+      "STATUS": 0
+    }
+  }
+}

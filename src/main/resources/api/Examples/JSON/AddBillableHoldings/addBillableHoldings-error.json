@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "AddBillableHoldings": {
+      "Params": {
+        "STATUS": -100,
+        "STATUS_DESC": "Unable to create Billable Holdings! (Store not successful - error status : -1\n)"
+      },
+      "STATUS": 0
+    }
+  }
+}

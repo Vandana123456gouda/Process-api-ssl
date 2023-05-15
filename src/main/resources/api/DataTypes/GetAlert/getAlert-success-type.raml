@@ -1,0 +1,54 @@
+#%RAML 1.0 DataType 
+type: object
+properties:
+  Reply:
+    type: object
+    properties:
+      GetAlert:
+        type: object
+        properties:
+          Params:
+            type: object
+            properties:
+              ALERT_DATA:
+                type: object
+                properties:
+                  ALERT:
+                    type: object
+                    properties:
+                      OWNERSHIP_CD:
+                        type: string
+                        required: false
+                      ALERT_KEY:
+                        type: integer
+                        required: false
+                      ADDRESSEE_CD:
+                        type: string
+                        required: false
+                      ALERT_CD:
+                        type: string
+                        required: false
+                      ALERT_FDESC:
+                        type: string
+                        required: false
+                      START_DT:
+                        type: integer
+                        required: false
+                      END_DT:
+                        type: string
+                        required: false
+                      ALERT_CMTS:
+                        type: string
+                        required: false
+                      ALERT_PRIORITY_NO:
+                        type: string
+                        required: false
+              STATUS:
+                type: integer
+                required: false
+              STATUS_DESC:
+                type: string
+                required: false
+          STATUS:
+            type: integer
+            required: false

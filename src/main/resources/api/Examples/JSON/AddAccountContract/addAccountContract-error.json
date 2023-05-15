@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "AddAccountContract": {
+      "Params": {
+        "STATUS": "-100",
+        "STATUS_DESC": "Unable to create Contract!"
+      },
+      "STATUS": "0"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+#%RAML 1.0 DataType 
+type: object
+# additionalProperties: false
+properties:
+  Request:
+    type: object
+    # additionalProperties: false
+    properties:
+      SetAssetExtendedAttributes:
+        type: object
+        # additionalProperties: false
+        properties:
+          Params:
+            type: object
+            # additionalProperties: false
+            properties:
+              ASSET_AREA:
+                type: string
+                maxLength: 2
+                required: true
+              ASSET_TP:
+                type: string
+                maxLength: 5
+                required: true
+              ASSET_NO:
+                type: any
+                required: true
+              TRXN_DTM:
+                type: string
+                example: ''
+                required: false
+              FACTOR_CD:
+                type: string
+                example: ''
+                required: false
+              ASSET_ATTRS:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    ASSET_ATTR:
+                      type: object
+                      # additionalProperties: false
+                      properties:
+                        ATTRIBUTE_CD:
+                          type: string
+                          example: ''
+                          required: false
+                        ATTRIBUTE_VAL:
+                          type: any
+                          required: false

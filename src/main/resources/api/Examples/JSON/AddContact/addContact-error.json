@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "AddContact": {
+      "Params": {
+        "STATUS": "-1",
+        "STATUS_DESC": "Unable to create  Contact transaction."
+      },
+      "STATUS": "0"
+    }
+  }
+}

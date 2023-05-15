@@ -1,0 +1,11 @@
+{
+  "Request": {
+    "GetBillDates": {
+      "Params": {
+        "ACCOUNT_NO": 2000000,
+        "FROM_DT": "20221005",
+        "TO_DT": "20230205"
+      }
+    }
+  }
+}

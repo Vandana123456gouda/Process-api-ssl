@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "AddServiceBillCode": {
+      "Params": {
+        "STATUS": -100,
+        "STATUS_DESC": "LOCATION_NO tag is missing or is empty."
+      },
+      "STATUS": 0
+    }
+  }
+}

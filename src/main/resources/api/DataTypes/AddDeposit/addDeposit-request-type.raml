@@ -1,0 +1,58 @@
+#%RAML 1.0 DataType 
+type: object
+properties:
+  Request:
+    type: object
+    properties:
+      AddDeposit:
+        type: object
+        properties:
+          Params:
+            type: object
+            properties:
+              ACCOUNT_NO:
+                type: integer
+                required: true
+              LOCATION_NO:
+                type: number
+                required: false
+              SERVICE_TP:
+                type: string
+                maxLength: 5
+                required: true
+              DEPOSIT_RULE_TP:
+                type: string
+                maxLength: 5
+                required: false
+              EFFECTIVE_DT:
+                type: string
+                required: false
+              DEPOSIT_TP:
+                type: string
+                maxLength: 5
+                required: false
+              ORIGINAL_AMT:
+                type: number
+                required: false
+              DOCUMENT_FDESC:
+                type: string
+                maxLength: 40
+                required: false
+              INSTALLMENTS_TO_BILL:
+                type: number
+                required: false
+              EXPIRY_DT:
+                type: string
+                required: false
+              NON_CASH_YN:
+                type: string
+                enum: ["",T,F]
+                required: false
+              DO_NOT_AUTO_REFUND_YN:
+                type: string
+                enum: ["",T,F]
+                required: false
+              DEPOSIT_CMTS:
+                type: string
+                maxLength: 2000
+                required: false

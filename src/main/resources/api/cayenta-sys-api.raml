@@ -1,0 +1,97 @@
+#%RAML 1.0
+title: cayenta-sys-api
+uses:
+  Library: /Libraries/library.raml
+documentation:
+  - title: Overview
+    content: !include /Docs/Home.md
+  - title: How to Use the API
+    content: !include /Docs/How-to.md
+  - title: Release
+    content: !include /Docs/release.md
+/addaccountcontract:
+  type: Library.AddAccountContract
+/addaccountlocation:
+  type: Library.Addaccountlocation
+/addaccountperson:
+  type: Library.AddAccountPerson
+/addaccountrelationship:
+  type: Library.AddAccountRelationship
+/addaddressrecord:
+  type: Library.AddAddressRecord
+/addalert:
+  type: Library.AddAlert
+/addbillableholdings:
+  type: Library.AddBillableHoldings
+/addcontact:
+  type: Library.AddContact
+/adddeposit:
+  type: Library.AddDeposit
+/addlocationservice:
+  type: Library.AddLocationService
+/addmeterbillcode:
+  type: Library.AddMeterBillCode
+/addmovein:
+  type: Library.AddMovein
+/addperson:
+  type: Library.AddPerson
+/addrequest:
+  type: Library.AddRequest
+/addservicebillcode:
+  type: Library.AddServiceBillCode
+/getaccount:
+  type: Library.GetAccount
+/getaccountservicelocations:
+  type: Library.GetAccountServiceLocations
+/getaddressrecords:
+  type: Library.GetAddressRecords
+/getalert:
+  type: Library.GetAlert
+/getavgconsumption:
+  type: Library.GetAvgConsumption
+/getbilldates:
+  type: Library.GetBillDates
+/getbilldetails:
+  type: Library.GetBillDetails
+/getbillableholdings:
+  type: Library.GetBillableHoldings
+/getconsumptionhistory:
+  type: Library.GetConsumptionHistory
+/getlocation:
+  type: Library.GetLocation
+# /getinstalledmeters:
+#   type: Library.GetInstalledMeters
+# /getinstalledassets:
+#   type: Library.GetInstalledAssets
+/getinstalledservices:
+  type: Library.GetInstalledServices
+/getmeterbillcode:
+  type: Library.GetMeterBillCode
+/getperson:
+  type: Library.GetPerson
+/getphonerecords:
+  type: Library.GetPhoneRecords
+/getservicebillcode:
+  type: Library.GetServiceBillCode
+/getserviceorder:
+  type: Library.GetServiceOrder
+/setaccount:
+  type: Library.SetAccount
+/setassetextendedattributes:
+  type: Library.SetAssetExtendedAttributes
+/setaccountbillingaddress:
+  type: Library.SetAccountBillingAddress
+/setaccountphone:
+  type: Library.SetAccountBillingAddress
+/setlocation:
+  type: Library.SetAccountBillingAddress
+/setmailingaddress:
+/setmeterbillcode:
+/setperson:
+/setpersonaddress:
+/setphone:
+/setservicebillcode:
+/setserviceorder:
+/setpin:
+/setdeposit:
+/setservice:

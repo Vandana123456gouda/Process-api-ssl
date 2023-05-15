@@ -1,0 +1,34 @@
+#%RAML 1.0 DataType 
+type: object
+properties:
+  Request:
+    type: object
+    properties:
+      GetConsumptionHistory:
+        type: object
+        properties:
+          Params:
+            type: object
+            properties:
+              ACCOUNT_NO:
+                type: integer
+                required: true
+              LOCATION_NO:
+                type: integer
+                required: true
+              SERV_SEQ:
+                type: integer
+                required: true
+              MONTH_TO_COMPARE:
+                type: number
+                required: false
+              START_YEAR:
+                type: string
+                required: false
+              END_YEAR:
+                type: string
+                required: false
+              SKIP_INTERMEDIATE_YN:
+                type: string
+                enum: [T,F,""]
+                required: false

@@ -1,0 +1,144 @@
+#%RAML 1.0 DataType 
+type: object
+properties:
+  Reply:
+    type: object
+    properties:
+      GetAddressRecords:
+        type: object
+        properties:
+          Params:
+            type: object
+            properties:
+              STATUS:
+                type: integer
+                required: false
+              ADDRESS_COUNT:
+                type: integer
+                required: false
+              ADDRESS:
+                type: object
+                properties:
+                  ADDRESS_SEQ:
+                    type: integer
+                    required: false
+                  ACTIVE_DT:
+                    type: integer
+                    required: false
+                  INACTIVE_DT:
+                    type: string
+                    required: false
+                  SEASON_STR_MTH:
+                    type: string
+                    required: false
+                  SEASON_STR_DAY:
+                    type: string
+                    required: false
+                  SEASON_END_MTH:
+                    type: string
+                    required: false
+                  SEASON_END_DAY:
+                    type: string
+                    required: false
+                  ADDRESS_CD:
+                    type: string
+                    required: false
+                  HOUSE_NO:
+                    type: string
+                    required: false
+                  STREET_PFX_DIR:
+                    type: string
+                    required: false
+                  STREET_NM:
+                    type: string
+                    required: false
+                  STREET_NM_SFX:
+                    type: string
+                    required: false
+                  STREET_SFX_DIR:
+                    type: string
+                    required: false
+                  SEC_ADDR_ID:
+                    type: string
+                    required: false
+                  SEC_ADDR_RANGE:
+                    type: string
+                    required: false
+                  TER_ADDR_ID:
+                    type: string
+                    required: false
+                  TER_ADDR_RANGE:
+                    type: string
+                    required: false
+                  ROUTE_PFX:
+                    type: string
+                    required: false
+                  ADDR_ROUTE:
+                    type: string
+                    required: false
+                  CITY:
+                    type: string
+                    required: false
+                  PROVINCE_CD:
+                    type: string
+                    required: false
+                  POSTAL_CD:
+                    type: integer
+                    required: false
+                  PO_BOX_NO:
+                    type: string
+                    required: false
+                  DELIVERY_INST_TP:
+                    type: string
+                    required: false
+                  DELIVERY_INST_NM:
+                    type: string
+                    required: false
+                  COUNTRY_CD:
+                    type: string
+                    required: false
+                  IN_CARE_OF:
+                    type: string
+                    required: false
+                  ENVELOPE_MEMO:
+                    type: string
+                    required: false
+                  DEFAULT_YN:
+                    type: string
+                    required: false
+                  LIS_CD:
+                    type: string
+                    required: false
+                  LIS_NO:
+                    type: string
+                    required: false
+                  LIS_VALIDAT_STAT:
+                    type: string
+                    required: false
+                  PRIMARY_LOCATION_YN:
+                    type: string
+                    required: false
+                  ADDR_ID_4:
+                    type: string
+                    required: false
+                  ADDR_RANGE_4:
+                    type: string
+                    required: false
+                  LOCATOR_ID:
+                    type: string
+                    required: false
+                  ADDRESS_CMTS:
+                    type: string
+                    required: false
+                  PERSON_ADDRESS_YN:
+                    type: string
+                    required: false
+                  ACCOUNT:
+                    type: object
+                    properties:
+                      ACCOUNT_NO:
+                        type: integer
+                        required: false
+          STATUS:
+            type: integer
+            required: false

@@ -1,0 +1,31 @@
+{
+  "Request": {
+    "AddBillableHoldings": {
+      "Params": {
+        "LOCATION_NO": 3000003,
+        "SERVICE_TP": "UGASM",
+        "ASSET_TP": "TANK",
+        "CONFIG_CD": "C100",
+        "EFFECTIVE_DT": "3051990",
+        "COUNT": 2,
+        "SEQ_NO": "",
+        "END_DT": "",
+        "GENERIC_1": "",
+        "GENERIC_2": "",
+        "GENERIC_3": "",
+        "GENERIC_4": "",
+        "GENERIC_5": "",
+        "GENERIC_6": "",
+        "GENERIC_7": "",
+        "GENERIC_8": "",
+        "GENERIC_9": "",
+        "GENERIC_10": "",
+        "SIC_CD": "",
+        "AREA_SERVED": "01-FRONT",
+        "COMMENTS": "",
+        "START_BILL_DT": "",
+        "STOP_BILL_DT": ""
+      }
+    }
+  }
+}

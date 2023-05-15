@@ -1,0 +1,13 @@
+{
+  "Request": {
+    "GetAvgConsumption": {
+      "Params": {
+        "LOCATION_NO": 3000003,
+        "SERVICE_TYPE": "UGASM",
+        "SERVICE_SEQ": 1,
+        "YEAR": 2021,
+        "CALC_TP": ""
+      }
+    }
+  }
+}

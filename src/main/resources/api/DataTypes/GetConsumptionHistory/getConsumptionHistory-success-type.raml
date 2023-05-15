@@ -1,0 +1,84 @@
+#%RAML 1.0 DataType 
+type: object
+properties:
+  Reply:
+    type: object
+    properties:
+      GetConsumptionHistory:
+        type: object
+        properties:
+          Params:
+            type: object
+            properties:
+              INSTALLED_METER:
+                type: object
+                properties:
+                  B_LINE3:
+                    type: string
+                    required: false
+                  METER_NO:
+                    type: integer
+                    required: false
+                  SET_DT:
+                    type: integer
+                    required: false
+                  PULL_DT:
+                    type: string
+                    required: false
+                  SERIAL_NO:
+                    type: integer
+                    required: false
+                  METER_TP:
+                    type: string
+                    required: false
+                  W_AVG_CALC_DT:
+                    type: string
+                    required: false
+                  LOCATION_NO:
+                    type: integer
+                    required: false
+                  METER_SEQ:
+                    type: integer
+                    required: false
+                  EFFECTIVE_DT:
+                    type: integer
+                    required: false
+                  SERV_SEQ:
+                    type: integer
+                    required: false
+                  ACCOUNT_NO:
+                    type: integer
+                    required: false
+                  ROUTE_NO:
+                    type: integer
+                    required: false
+                  ROUTE_SEQ:
+                    type: integer
+                    required: false
+                  TX_CREATED_FROM:
+                    type: string
+                    required: false
+                  SEQ_SET_DT:
+                    type: string
+                    required: false
+                  MULTIPLIER:
+                    type: number
+                    required: false
+                  V_PENDING_SO_YN:
+                    type: string
+                    required: false
+                  V_PENDING_ACTIONS:
+                    type: string
+                    required: false
+                  AVG_CALC_TP:
+                    type: string
+                    required: false
+                  AVG_AMT:
+                    type: string
+                    required: false
+                  CONS_HIST:
+                    type: string
+                    required: false
+          STATUS:
+            type: integer
+            required: false

@@ -1,0 +1,15 @@
+{
+  "Reply": {
+    "AddMoveIn": {
+      "Params": {
+        "ACCOUNT_NO": 1000017,
+        "LOCATION_NO": 3000003,
+        "SERVICE_SEQ": "",
+        "TRANSACTION_NO": 18323,
+        "STATUS": 0,
+        "STATUS_DESC": "The AddMoveIn message completed successfully."
+      },
+      "STATUS": 0
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "Reply": {
+    "AddDeposit": {
+      "Params": {
+        "DEPOSIT_SEQ": 1,
+        "STATUS": 0,
+        "STATUS_DESC": "Deposit/s is/are created."
+      },
+      "STATUS": ""
+    }
+  }
+}

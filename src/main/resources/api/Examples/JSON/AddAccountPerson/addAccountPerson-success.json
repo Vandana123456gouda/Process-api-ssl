@@ -1,0 +1,13 @@
+{
+  "Reply": {
+    "AddAccountPerson": {
+      "Params": {
+        "ACCOUNT_NO": 1000017,
+        "PERSON_NO": 1027274,
+        "STATUS": "0",
+        "STATUS_DESC": "Account Person created."
+      },
+      "STATUS": "0"
+    }
+  }
+}

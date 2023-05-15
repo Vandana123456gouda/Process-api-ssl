@@ -1,0 +1,39 @@
+{
+  "Reply": {
+    "GetBillableHoldings": {
+      "Params": {
+        "STATUS": "",
+        "BILLABLE_HOLDING": {
+          "LOCATION_NO": 3000045,
+          "SERVICE_SEQ": 1,
+          "SERVICE_TP": "NKEYM",
+          "SERVICE_DESCRIPTION": "",
+          "ASSET_TP": "",
+          "ASSET_DESCRIPTION": "",
+          "CONFIG_CD": "",
+          "CONFIG_DESCRIPTION": "",
+          "SEQ_NO": "",
+          "EFFECTIVE_DT": "",
+          "END_DT": "",
+          "GENERIC_1": "",
+          "GENERIC_2": "",
+          "GENERIC_3": "",
+          "GENERIC_4": "",
+          "GENERIC_5": "",
+          "GENERIC_6": "",
+          "GENERIC_7": "",
+          "GENERIC_8": "",
+          "GENERIC_9": "",
+          "GENERIC_10": "",
+          "COUNT": "",
+          "SIC_CD": "",
+          "AREA_SERVED": "",
+          "COMMENTS": "",
+          "STOP_BILL_DT": 2061993,
+          "START_BILL_DT": 2052003
+        }
+      },
+      "STATUS": ""
+    }
+  }
+}

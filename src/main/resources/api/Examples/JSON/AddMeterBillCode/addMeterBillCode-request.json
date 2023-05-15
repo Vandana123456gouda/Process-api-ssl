@@ -1,0 +1,25 @@
+{
+  "Request": {
+    "AddMeterBillCode": {
+      "Params": {
+        "LOCATION_NO": 3000114,
+        "METER_SEQ": 1,
+        "BILL_CD": "4PR01",
+        "ACTIVE_DT": "20150728",
+        "CH_CREATED_FROM": 5,
+        "CH_DEACTIVATED_FROM": 6,
+        "SERVICE_SEQ": 1,
+        "ACCOUNT_NO": 2000091,
+        "INACTIVE_DT": "2022-11-28 00:00:00.000",
+        "SC_CREATED_FROM": 7,
+        "SF_CREATED_FROM": 8,
+        "SC_DEACTIVATED_FROM": 2941,
+        "SF_DEACTIVATED_FROM": 9,
+        "INACTIVATED_BY": "S",
+        "MBC_MULTIPLIER": 1.00000000,
+        "TAX_OVERRIDE_CD": "",
+        "METER_BILL_CD_CMTS": ""
+      }
+    }
+  }
+}

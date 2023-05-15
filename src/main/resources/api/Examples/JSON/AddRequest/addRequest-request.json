@@ -1,0 +1,33 @@
+{
+  "Request": {
+    "AddRequest": {
+      "Params": {
+        "ACCOUNT_NO": 2000239,
+        "LOCATION_NO": 3007386,
+        "PERSON_NO": 1027274,
+        "SERVICE_TP": "NHOC",
+        "SERVICE_SEQ": 1,
+        "REQUEST_CMTS": "Connect with reading, ID CR okay deposit waived",
+        "REQUEST_TP": "EMERG",
+        "REQUESTOR_NO": 1230985,
+        "REQUESTOR_ADDR": "123 MAIN STRT",
+        "REQUESTOR_FNM": "JOE",
+        "REQUESTOR_LNM": "TEST",
+        "REQUESTOR_EMAIL": "EXAMPLE@EMAIL.COM",
+        "REQUESTOR_PHONE": 123456789,
+        "REQUEST_STAT": "",
+        "OWNER": "",
+        "EFFECTIVE_DT": 3052023,
+        "REASON_CD": "CUSTR",
+        "PRIORITY": "",
+        "FOREIGN_ID": 1310250,
+        "PERFORMANCE_BASED_YN": "y",
+        "ASSET_TP": "METER",
+        "ASSET_NO": 11685,
+        "METER_NO": 100002,
+        "SERIAL_NO": "0547-A2",
+        "COMPANY_CD": "WES"
+      }
+    }
+  }
+}

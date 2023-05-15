@@ -1,0 +1,15 @@
+{
+  "Request": {
+    "AddAlert": {
+      "Params": {
+        "OWNERSHIP_CD": "ACCT",
+        "ALERT_KEY": 2000021,
+        "ALERT_KEY_CUSTOM": "",
+        "ALERT_CD": "AUTOP",
+        "ALERT_ON_DT": "03082022",
+        "ADDRESSEE_CD": "COLL",
+        "ALERT_CMTS": "mtexe completed 07/27/2022"
+      }
+    }
+  }
+}

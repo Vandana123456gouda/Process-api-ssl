@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "AddBillableHoldings": {
+      "Params": {
+        "STATUS": 0,
+        "STATUS_DESC": "Billable Holdings, Store successful."
+      },
+      "STATUS": 0
+    }
+  }
+}

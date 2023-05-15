@@ -1,0 +1,72 @@
+{
+  "Request": {
+    "SetAccount": {
+      "Params": {
+        "ACCOUNT_NO": "1010123",
+        "ACCOUNT_NO_CUSTOM": "2251234",
+        "ACCOUNT_NO_CUSTOM_2": "012435598",
+        "APPLICATION_NO": "",
+        "CYCLE_CD": "12",
+        "ELIG_TXROLLOVER_YN": "F",
+        "CUSTOM_BILL_ID": "",
+        "TITLE_CD": "MR",
+        "PERSON_FNM": "ROBERT",
+        "PERSON_MNM": "G",
+        "PERSON_LNM": "BOB",
+        "IN_CARE_OF_OVRD": "",
+        "ENVELOPE_MEMO_OVRD": "",
+        "ACCOUNT_STAT": "WRTOF",
+        "ACCOUNT_STAT_START_DT": "1998-08-29 00:00:00.000",
+        "ACCOUNT_STAT_END_DT": "2022-08-29 00:00:00.000",
+        "AVG_BILLING_YN": "F",
+        "AVG_DFLT_AMT": "",
+        "BILLING_STAT": "FINAL",
+        "CLOSED_YN": "T",
+        "OK_TO_BILL_YN": "F",
+        "BILL_COPIES": "4",
+        "BILL_COUNT": "0",
+        "ACCOUNT_CLASS_DFLT": "RES",
+        "ALLOW_DAYS_LATE": "5",
+        "SELECT_CD": "",
+        "OVERDUE_YN": "F",
+        "TAX_EXEMPT_YN": "F",
+        "GENERIC_1": "TEST-1",
+        "GENERIC_2": "TEST-2",
+        "GENERIC_3": "TEST-3",
+        "CO_BYPASS_YN": "F",
+        "INTEREST_EXEMPT_YN": "F",
+        "BYPASS_END_DT": "2022-08-29 00:00:00.000",
+        "CREDIT_SCORE": "25",
+        "CREDIT_RATING_CD": "POOR",
+        "CREDIT_EXPIRY_DT": "2023-04-15 00:00:00.000",
+        "LIEN_STATUS": "",
+        "LIEN_AMT": "",
+        "BYPASS_WRITE_OFF_YN": "F",
+        "HOLD_WRITE_OFF_YN": "F",
+        "LANGUAGE_CD": "ENG",
+        "NO_BILL_START_DT": "",
+        "NO_BILL_END_DT": "",
+        "REBILL_AS_INSTBILL": "F",
+        "WELFARE_AGENCY_YN": "F",
+        "ATT_ON_HOLD_YN": "F",
+        "ATT_ON_HOLD_END_DT": "",
+        "BYPASS_WRTOF_END_DT": "",
+        "REBILL_PENDING_YN": "F",
+        "BILL_SORT_SEQ_CD": "",
+        "MIN_BILL_AMT": "",
+        "MIN_BILL_TAXABLE_YN": "F",
+        "MIN_BILL_DISCOUNTABLE_YN": "F",
+        "ARCHIVE_NO": "",
+        "BUDGET_BILL_TP": "",
+        "FORCE_FINAL_YN": "F",
+        "ACCOUNT_CMTS": "",
+        "ACCOUNT_ATTRS": {
+          "ACCOUNT_ATTR": {
+            "ATTRIBUTE_CD": "",
+            "ATTRIBUTE_VAL": ""
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "SetAccount": {
+      "Params": {
+        "STATUS": "0",
+        "STATUS_DESC": "Account information successfully updated."
+      },
+      "STATUS": "0"
+    }
+  }
+}

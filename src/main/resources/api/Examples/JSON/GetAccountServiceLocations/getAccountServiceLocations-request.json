@@ -1,0 +1,11 @@
+{
+  "Request": {
+    "GetAccountServiceLocations": {
+      "Params": {
+        "ACCOUNT_NO": 2000004,
+        "SERVICE_TP": "",
+        "LOCATION_NO": 123
+      }
+    }
+  }
+}

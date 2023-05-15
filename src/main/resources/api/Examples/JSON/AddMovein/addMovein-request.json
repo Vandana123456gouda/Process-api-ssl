@@ -1,0 +1,12 @@
+{
+  "Request": {
+    "AddMoveIn": {
+      "Params": {
+        "ACCOUNT_NO": 1000017,
+        "LOCATION_NO": 3000003,
+        "SERVICE_SEQ": 1,
+        "EFFECTIVE_DT": "3022023"
+      }
+    }
+  }
+}

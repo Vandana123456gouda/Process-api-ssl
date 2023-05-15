@@ -1,0 +1,11 @@
+{
+  "Request": {
+    "GetAccount": {
+      "Params": {
+        "ACCOUNT_NO": 1000017,
+        "PREPAY_INFO_YN": "F",
+        "FMT_PREPAY_YN": "F"
+      }
+    }
+  }
+}

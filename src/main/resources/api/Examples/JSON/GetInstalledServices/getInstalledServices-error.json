@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "GetInstalledServices": {
+      "Params": {
+        "STATUS": -200,
+        "STATUS_DESC": "Installed Service not Found."
+      },
+      "STATUS": 0
+    }
+  }
+}

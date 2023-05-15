@@ -1,0 +1,15 @@
+{
+  "Request": {
+    "GetConsumptionHistory": {
+      "Params": {
+        "ACCOUNT_NO": 1000017,
+        "LOCATION_NO": 3000003,
+        "SERV_SEQ": 1,
+        "MONTH_TO_COMPARE": 2,
+        "START_YEAR": "",
+        "END_YEAR": "",
+        "SKIP_INTERMEDIATE_YN": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "Reply": {
+    "GetConsumptionHistory": {
+      "Params": {
+        "INSTALLED_METER": {
+          "B_LINE3": "",
+          "METER_NO": 145845,
+          "SET_DT": 20170119,
+          "PULL_DT": "",
+          "SERIAL_NO": 146704,
+          "METER_TP": "G_4_100",
+          "W_AVG_CALC_DT": "",
+          "LOCATION_NO": 3000003,
+          "METER_SEQ": 1,
+          "EFFECTIVE_DT": 20190329,
+          "SERV_SEQ": 1,
+          "ACCOUNT_NO": 2059571,
+          "ROUTE_NO": 110105,
+          "ROUTE_SEQ": 2660,
+          "TX_CREATED_FROM": "",
+          "SEQ_SET_DT": "",
+          "MULTIPLIER": 1.012115,
+          "V_PENDING_SO_YN": "",
+          "V_PENDING_ACTIONS": "",
+          "AVG_CALC_TP": "",
+          "AVG_AMT": "",
+          "CONS_HIST": ""
+        }
+      },
+      "STATUS": 0
+    }
+  }
+}

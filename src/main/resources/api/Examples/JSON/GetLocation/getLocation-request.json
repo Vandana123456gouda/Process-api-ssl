@@ -1,0 +1,9 @@
+{
+  "Request": {
+    "GetLocation": {
+      "Params": {
+        "LOCATION_NO": 3000003
+      }
+    }
+  }
+}

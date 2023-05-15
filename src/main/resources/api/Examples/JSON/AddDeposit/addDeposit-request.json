@@ -1,0 +1,21 @@
+{
+  "Request": {
+    "AddDeposit": {
+      "Params": {
+        "ACCOUNT_NO": 1000017,
+        "LOCATION_NO": 22,
+        "SERVICE_TP": "UGASM",
+        "DEPOSIT_RULE_TP": "REGLR",
+        "EFFECTIVE_DT": "3292023",
+        "DEPOSIT_TP": "",
+        "ORIGINAL_AMT": 2.5,
+        "DOCUMENT_FDESC": "",
+        "INSTALLMENTS_TO_BILL": 2,
+        "EXPIRY_DT": "",
+        "NON_CASH_YN": "",
+        "DO_NOT_AUTO_REFUND_YN": "",
+        "DEPOSIT_CMTS": ""
+      }
+    }
+  }
+}

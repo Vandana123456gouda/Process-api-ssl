@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "GetConsumptionHistory": {
+      "Params": {
+        "STATUS": -4,
+        "STATUS_DESC": "Invalid Account Number 100017 ."
+      },
+      "STATUS": 0
+    }
+  }
+}

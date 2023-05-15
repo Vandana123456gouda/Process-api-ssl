@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "SetLocation": {
+      "Params": {
+        "STATUS": "",
+        "STATUS_DESC": ""
+      },
+      "STATUS": ""
+    }
+  }
+}

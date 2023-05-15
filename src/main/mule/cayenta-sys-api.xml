@@ -1,0 +1,1141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns:tls="http://www.mulesoft.org/schema/mule/tls" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd 
+http://www.mulesoft.org/schema/mule/tls http://www.mulesoft.org/schema/mule/tls/current/mule-tls.xsd">
+    <http:listener-config name="cayenta-sys-api-httpListenerConfig">
+        <http:listener-connection host="0.0.0.0" port="${api.port}">
+		</http:listener-connection>
+    </http:listener-config>
+    <apikit:config name="cayenta-sys-api-config" api="api\cayenta-sys-api.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
+    <http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="ee25ad08-e8a0-4981-87b8-647e003920a1" >
+		<http:request-connection protocol="HTTPS" host="10.100.101.21" port="8843" >
+			<tls:context >
+				<tls:trust-store path="Security/HG-Cayenta.jks" password="123456" type="jks" insecure="true" />
+			</tls:context>
+			<http:authentication >
+				<http:basic-authentication username="SA_Cayenta" password="smmBh87O5UOv6RX" />
+			</http:authentication>
+		</http:request-connection>
+	</http:request-config>
+	<global-property doc:name="Global Property" doc:id="cbbc85d9-4293-4318-92ed-d7c9a9445c30" name="api.port" value="8081" />
+	<flow name="cayenta-sys-api-main">
+        <http:listener config-ref="cayenta-sys-api-httpListenerConfig" path="/api/*">
+            <http:response statusCode="#[vars.httpStatus default 200]">
+                <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
+            </http:response>
+            <http:error-response statusCode="#[vars.httpStatus default 500]">
+                <http:body><![CDATA[#[payload]]]></http:body>
+                <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
+            </http:error-response>
+        </http:listener>
+        <logger level="INFO" doc:name="start logger" doc:id="11432240-a814-4ea5-84d0-eae94a1283dd" message="####Listener Logger#####"/>
+		<apikit:router config-ref="cayenta-sys-api-config" />
+        <error-handler>
+            <on-error-propagate type="APIKIT:BAD_REQUEST">
+                <ee:transform>
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Bad request"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus">400</ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
+            <on-error-propagate type="APIKIT:NOT_FOUND">
+                <ee:transform>
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Resource not found"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus">404</ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
+            <on-error-propagate type="APIKIT:METHOD_NOT_ALLOWED">
+                <ee:transform>
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Method not allowed"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus">405</ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
+            <on-error-propagate type="APIKIT:NOT_ACCEPTABLE">
+                <ee:transform>
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Not acceptable"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus">406</ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
+            <on-error-propagate type="APIKIT:UNSUPPORTED_MEDIA_TYPE">
+                <ee:transform>
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Unsupported media type"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus">415</ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
+            <on-error-propagate type="APIKIT:NOT_IMPLEMENTED">
+                <ee:transform>
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Not Implemented"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus">501</ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
+        </error-handler>
+    </flow>
+    <flow name="cayenta-sys-api-console">
+        <http:listener config-ref="cayenta-sys-api-httpListenerConfig" path="/console/*">
+            <http:response statusCode="#[vars.httpStatus default 200]">
+                <http:headers>#[vars.outboundHeaders default {}]</http:headers>
+            </http:response>
+            <http:error-response statusCode="#[vars.httpStatus default 500]">
+                <http:body>#[payload]</http:body>
+                <http:headers>#[vars.outboundHeaders default {}]</http:headers>
+            </http:error-response>
+        </http:listener>
+        <apikit:console config-ref="cayenta-sys-api-config" />
+        <error-handler>
+            <on-error-propagate type="APIKIT:NOT_FOUND">
+                <ee:transform>
+                    <ee:message>
+                        <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{message: "Resource not found"}]]></ee:set-payload>
+                    </ee:message>
+                    <ee:variables>
+                        <ee:set-variable variableName="httpStatus">404</ee:set-variable>
+                    </ee:variables>
+                </ee:transform>
+            </on-error-propagate>
+        </error-handler>
+    </flow>
+    <flow name="post:\addaccountcontract:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="start Logger" doc:id="6d1747be-f95a-4578-ab94-19edcf41ee67" message="#####Before Request#####:#[payload]"/>
+		<ee:transform doc:name="Transform Message" doc:id="c85aeac6-2b05-4853-9a7c-32cc100881fa" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="9833a1fe-cbb8-47c2-be51-f80fce740100" path="/cayentaws/service/API" config-ref="HTTP_Request_configuration">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="a3f22356-cb4b-4d42-a30b-faeb411b826c" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="end Logger" doc:id="103f4dcc-7edc-41c4-828f-fd767ca35491" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\addaccountlocation:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="4914f07b-9e2b-4d9b-8565-c3a6fc6f0117" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="6c402766-7247-4051-903c-3600521617f3" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="9552a067-f553-4d59-8281-d991a02479af" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="500d1209-3516-4c9b-a58c-37f648aef4db" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\addaccountperson:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="b5e68910-4da7-4fba-a22f-9fbdd9fa43f0" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="45fc03f5-293b-4f9d-bd3e-a526cc9fcbc0" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="8b744451-e30f-40df-a07a-fade32a96a1d" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="c5b7c28a-2ba3-4c30-b8fe-0ed853501309" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\addaccountrelationship:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="65301b5e-a524-42a6-93df-8de6eb7461f8" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="503b32a1-03f2-4799-a641-f281a1da3d7f" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="3705794d-0dd3-4715-8437-6abd507558f6" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="158c7568-48f3-432d-ba35-739791844836" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\addaddressrecord:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="8f9bd720-4b51-4352-a95a-f8dc933bed4e" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="cbb3b786-95f5-4ba7-a16a-0f4c09cf60ff" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="e36d1757-2364-4f40-80d6-d9700cd5e3fa" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="db78e52f-d5f9-4f71-a8ba-a5e0b0c8290f" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\addalert:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="9e92e7cb-f673-431c-8309-9906fdea1301" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="aa12ffb9-b50e-48ab-b3b5-1b89e3c29277" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="97880879-27b7-4847-80df-bceb3a32e96c" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="83dbe57d-7e6e-4382-ac8f-cfca7a5a39c3" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\addbillableholdings:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="ec760359-b1a3-458b-a83f-a4b6e9c8d3f6" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="524abb79-c55a-4fb9-a1c2-423290caa67d" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="ccc97f59-90e1-4947-9f98-18fb076bd6c1" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="2cf2f578-33ac-4834-b2dc-4b3a5b9e49e9" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\addcontact:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="093f175a-2c06-4dfd-97ea-9c54d5fd21f7" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="c3b0841f-85e6-47de-89cd-f40c0fb97149" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="25838fba-1df9-4df9-964c-255f3ed37b6f" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="893c8df8-1f1e-4244-a2b1-109222fc6714" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\adddeposit:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="81d304db-ff07-4388-9999-56348540e28c" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="5110dd5b-1763-4150-9c2d-6015b802cfa5" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="5a0bcabc-cdf6-4c3c-bb1c-30aa1533eda7" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="191971d3-2314-4305-aadc-ecfcf4b9cf01" message="#####Before Request#####:#[payload]"/>
+    </flow>
+	<flow name="post:\addlocationservice:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="2ca8e947-83be-4cbe-bcfa-6aab46dc1dbb" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="1c00e8e1-6459-45a1-b4e2-984db41f90ee" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="0fa7eb16-7713-49a5-a85f-874c44a74b58">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="f1f65711-43f9-4b53-b232-831989eb9d2e" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\addmeterbillcode:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="8d39f64b-f3f7-4b50-acb6-4c5ce048995d" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="2faac485-937b-4af6-a7d9-9e2971cb9fcd" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="ff0cbe70-f640-4f12-9a35-d2c2c60f8c81" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="456e7644-02f5-4222-a264-1f23754ade92" message="#####Before Request#####:#[payload]"/>
+    </flow>
+	<flow name="post:\addmovein:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="20cd366b-7f2f-4ea2-b66e-d412eedfa8c0" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="837055e9-c245-43a5-bb26-722a68f47e50" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="76b89fb7-9df7-47b6-9047-270dffbb8914">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="5863c0f4-ef6f-4d2b-8c3f-88a1a1e350fc" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\addperson:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="c0342e4c-a971-4650-a581-09dce9c693b0" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="a269f269-9fdc-42dc-b90f-fee9852fdc12" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="325a71c0-6150-4d0b-98d4-ebf7918eb4da" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="08c23cdd-62f9-4fde-9e4d-785fe748a1f3" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\addrequest:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="cd2cb928-c00a-4793-afbb-dc465123363d" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="1bd98a27-6a1e-4701-858e-59e8feefdff5" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="d17ada9c-bf03-427a-8657-bd28889c8658" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="f15ee2e1-f574-4fe5-b077-66a007f58df9" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\addservicebillcode:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="52ba4ed1-2fbf-42ff-9035-da1fb8173988" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="834c6baa-2cf2-48b3-9c77-e3a03e9ebca0" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="dd3bd8b4-58ac-489c-9a56-992ee0bab1f0" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="4cc9eb0b-9eef-4324-bc02-ee90561b3855" message="#####Before Request#####:#[payload]"/>
+    </flow>
+	<flow name="post:\getaccount:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="dc30d8d1-3d72-4508-b1ff-4195c3668bea" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="d98cda47-14cb-4e18-bc1a-ac3c0cd053de" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="f82013c4-963a-43f9-9a43-1521bb2d3c8f">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="df238694-3ad2-403c-b9b2-72cf5e55f681" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\getaccountservicelocations:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="b22d0a65-5209-4f92-a6b1-ea683d0e7fff" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="55714940-37aa-4d56-a99e-becce7a4928f" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="4f2fed70-09ae-4e85-8513-12f4cf7a8b5e" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="76155f88-920f-4e2a-a8dc-8e7928778294" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\getaddressrecords:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="f5e16076-5e37-49df-ac7e-2bccb54aa0f0" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="a12562d5-a549-4de0-bb1b-0c5b8209ec3d" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="747e4637-e5a1-4b50-8b59-822a05bf88ee" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="395a7825-51b1-4703-9d60-af6528ecafdd" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\getalert:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="d29a8936-ca64-4f45-9011-4be950683f32" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="5cdb46cb-994c-44af-a672-c6a15c8a6631" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="4623c1c8-8e23-4722-b962-005c9076a283" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="3d5862bb-5288-465c-98ed-130a61c3a0e0" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\getavgconsumption:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="b38d6eb5-584f-40aa-9983-f73140134475" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="61a1e89e-7ca2-43a0-9fb6-2c18fb02e13c" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="af4f599b-567b-4312-91b7-944cc758cfc5" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="8022ce78-69b9-46ca-97fc-4eaca132d90b" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\getbilldates:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="52ec4549-b414-49b3-ab6a-417d9dc00b3e" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="93f3c148-94c9-4b90-8b7f-b3e3c2024a87" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="9865769c-ef61-4f7b-802f-3be07db1d69f" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="b87df111-3b9b-4a56-954f-c1036ab5625b" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\getbilldetails:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="eae8b9f5-3bfb-459e-9115-a8fdd903c426" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="cc4e3963-97bf-46a4-94dc-eb44377481ce" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="74c2900f-6312-4919-8c59-cf93ee50e5db" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="47f117d0-4a66-47a7-8d1d-3539ba3bbac8" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\getbillableholdings:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="64fdc1f0-6641-45e8-b2ab-5e42bad69176" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="70118eb0-2a02-4230-b55f-b4ae1f1abbfb" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="9d12862d-18e7-4cc8-b2bd-ba2f68922b17" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="112af51f-f29a-4191-8b68-140ff7c52fb6" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\getconsumptionhistory:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="e52cd870-0393-4ab4-802e-525672a1304d" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="0943d974-bbc3-462c-aff3-0c6a530a1fe9" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="c9a420e5-dcd5-49c2-b941-333093d84ae6" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="7b17d4a9-9ad4-4dc2-82ef-618b2e5cbe78" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\getinstalledservices:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="3b2f118d-7681-46f7-8b7a-8d4a1112b939" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="0e21225c-1f37-4a5b-8d48-e587125d0d5f" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="4a089adc-b7a4-42db-b373-aafb8aa7c4b1" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="51cbaf2e-5115-42b2-9907-b158af92d036" message="#####Before Request#####:#[payload]"/>
+    </flow>
+	<flow name="post:\getlocation:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="4ae79de4-94ce-4f91-8dc3-3cff73752c97" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="e2d8af89-888a-4e9c-8c34-4d2d9b13c74c" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="87a4c27d-be2d-45fa-88eb-0c46a6a23dc2" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="90da3cad-f402-4d22-bd0a-29b33bf84980" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\getmeterbillcode:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="f975e65b-eda2-4400-bb59-97c7717c6144" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="309160db-e21b-43a5-aae3-6c7d99e0d506" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="a2c89a59-49d3-45d1-9407-a772861b0ecb" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="536793a6-b542-4933-a098-f3fc87419bf2" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\getperson:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="0f3512a2-9325-48f3-abe7-54109c1d5104" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="16623cc2-fe97-45d9-91b1-523f8160a0b2" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="0c5588b9-178f-48d0-8681-9dece513be80" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="2566ab24-023a-49cb-be63-87dce9d7f069" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\getphonerecords:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="e1aa1a13-5c01-4632-9309-85a4d74a8b41" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="1532f2fa-35e3-498c-87b3-7910f7305446" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="29ecd260-6d7b-4b19-9766-dddf72335991" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="cfb22e1a-0847-41fe-a5d1-32c1ad15bb00" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\getservicebillcode:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="23e3ccc0-e2fb-4a6a-9dbc-59fe877f460c" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="b7f4151b-49f7-45fa-9e6b-b9b001c71537" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="19465619-0bd7-4e2f-a715-d548b996cba1" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="ee26877e-c463-4d8a-91e0-4d8e06c98607" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\getserviceorder:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="c479a8ef-56b4-4be1-a59c-294a323ecc52" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="2af95a1e-9966-4514-924f-7ca331b1bab3" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="a5de6f9f-4f23-4e16-9577-47af7d0b05ee" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="549a96fa-02b5-4a0d-be61-a00aef6f5b6d" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\setaccount:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="f555ecb7-d7b6-4586-a4ab-643f1e4019ee" />
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="7cd0204f-bf57-4b81-9a4f-06467e6c6092" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="d7a11f94-3c22-4b1b-9c1a-deda3b576b45" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="fd548bf5-9665-4b4b-96ed-12821bb5425e" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\setlocation:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="b2b9ab49-4d9f-4e35-bf2e-8767ec265177" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="1e023af1-001d-4652-8a6c-e2c0c077a5b6" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="eb4084fb-7517-4c31-9f1b-f49b20a556f3" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="52959ab8-a50d-442e-96a9-2c8520c36643" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\setaccountbillingaddress:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="a83d69bc-901c-4c69-bec1-0e6428921fb7" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="771da47a-8370-402b-b345-ad8829a7a7c9" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="37bc1a0f-68f6-4a41-b83e-ea190a3bf287" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="05ef450a-7a9e-4147-8d3b-dac487560487" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\setaccountphone:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="2ea8f906-8bc4-47ea-b61d-1e7bae5a6da1" message="#####Before Request#####:#[payload]"/>
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="e5b70edb-07ac-47f3-b6cc-f93570f9ec71" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API"/>
+		<ee:transform doc:name="Transform Message" doc:id="da83031b-e6ed-40d3-a85d-381e5e2afd38" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="06e1dd74-63d5-415d-b900-25ead2c84936" message="#####Before Request#####:#[payload]"/>
+    </flow>
+    <flow name="post:\setassetextendedattributes:application\json:cayenta-sys-api-config">
+        <logger level="INFO" doc:name="Logger" doc:id="0724e04d-4986-4650-9a0c-96f8cffcb971" />
+		<ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+---
+payload]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="caa6953d-acf2-408a-b311-9e4e70c25589" config-ref="HTTP_Request_configuration" path="/cayentaws/service/API">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Accept" : "application/xml",
+	"Content-Type" : "application/xml"
+}]]]></http:headers>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="cc5a129a-f32d-4832-8bf6-b01a4d938e0c" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="bcefbf01-4609-409d-8641-83d08ccb74c5" message="#####Before Request#####:#[payload]"/>
+    </flow>
+</mule>

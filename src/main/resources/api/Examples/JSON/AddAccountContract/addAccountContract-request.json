@@ -1,0 +1,38 @@
+{
+   "Request": {
+      "AddAccountContract": {
+         "Params": {
+            "START_DT": 20230413,
+            "SERVICE_SEQ": 1,
+            "LOCATION_NO": 28053,
+            "END_DT": 20260412,
+            "CONTRACT_TP": "XX",
+            "CONTRACT_CD": "FIXED",
+            "ATTRIBUTE": [
+               {
+                  "VALUE_NUMERIC": 5.5,
+                  "LAST_EFF_DAY_DT": null,
+                  "FIRST_EFF_DAY_DT": 20260413,
+                  "ATTRIBUTE_TYPE": "NUMERIC",
+                  "ATTRIBUTE_CODE": "CRATE"
+               },
+               {
+                  "VALUE_NUMERIC": 5.5,
+                  "LAST_EFF_DAY_DT": 20240412,
+                  "FIRST_EFF_DAY_DT": 20230413,
+                  "ATTRIBUTE_TYPE": "NUMERIC",
+                  "ATTRIBUTE_CODE": "CRATE"
+               },
+               {
+                  "VALUE_NUMERIC": 31.5,
+                  "LAST_EFF_DAY_DT": 20260412,
+                  "FIRST_EFF_DAY_DT": 20230413,
+                  "ATTRIBUTE_TYPE": "NUMERIC",
+                  "ATTRIBUTE_CODE": "CCHG"
+               }
+            ],
+            "ACCOUNT_NO": 1000017
+         }
+      }
+   }
+}

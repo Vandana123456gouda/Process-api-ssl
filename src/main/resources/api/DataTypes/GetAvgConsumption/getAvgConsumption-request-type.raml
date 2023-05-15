@@ -1,0 +1,33 @@
+#%RAML 1.0 DataType 
+type: object
+# additionalProperties: false
+properties:
+  Request:
+    type: object
+    # additionalProperties: false
+    properties:
+      GetAvgConsumption:
+        type: object
+        # additionalProperties: false
+        properties:
+          Params:
+            type: object
+            # additionalProperties: false
+            properties:
+              LOCATION_NO:
+                type: number
+                required: true
+              SERVICE_TYPE:
+                type: string
+                maxLength: 5
+                required: true
+              SERVICE_SEQ:
+                type: number
+                required: false
+              YEAR:
+                type: number
+                required: false
+              CALC_TP:
+                type: string
+                maxLength: 5
+                required: false
