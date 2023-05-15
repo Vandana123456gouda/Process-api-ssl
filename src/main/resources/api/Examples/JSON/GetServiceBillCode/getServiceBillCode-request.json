@@ -1,0 +1,12 @@
+{
+  "Request": {
+    "GetServiceBillCode": {
+      "Params": {
+        "LOCATION_NO": 3072398,
+        "ACCOUNT_NO": 2029906,
+        "SERVICE_SEQ": 1,
+        "ACTIVE_DT": "20100503"
+      }
+    }
+  }
+}

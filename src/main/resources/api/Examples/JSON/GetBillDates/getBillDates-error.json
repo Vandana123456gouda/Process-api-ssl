@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "GetBillDates": {
+      "Params": {
+        "STATUS": -3,
+        "STATUS_DESC": "Account No 200000. Start Date 20221005. End Date 20230205."
+      },
+      "STATUS": 0
+    }
+  }
+}

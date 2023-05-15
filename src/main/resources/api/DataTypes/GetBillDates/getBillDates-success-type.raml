@@ -1,0 +1,61 @@
+#%RAML 1.0 DataType 
+type: object
+properties:
+  Reply:
+    type: object
+    properties:
+      GetBillDates:
+        type: object
+        properties:
+          Params:
+            type: object
+            properties:
+              STATUS:
+                type: integer
+                required: false
+              BILLS:
+                type: object
+                properties:
+                  BILL:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        BILL_RUN_DT:
+                          type: string
+                          required: false
+                        BILL_RUN_TM:
+                          type: string
+                          required: false
+                        INVOICE_NO:
+                          type: string
+                          maxLength: 30
+                          required: false
+                        BILL_TP:
+                          type: string
+                          required: false
+                        BILL_DT:
+                          type: string
+                          required: false
+                        POSTING_DT:
+                          type: string
+                          required: false
+                        GL_YEAR:
+                          type: string
+                          maxLength: 4
+                          required: false
+                        GL_PERIOD:
+                          type: integer
+                          required: false
+                        PERIOD_FROM_DT:
+                          type: string
+                          required: false
+                        PERIOD_TO_DT:
+                          type: string
+                          required: false
+                        BILLING_DAYS:
+                          type: integer
+                          required: false
+          STATUS:
+            type: integer
+            required: false

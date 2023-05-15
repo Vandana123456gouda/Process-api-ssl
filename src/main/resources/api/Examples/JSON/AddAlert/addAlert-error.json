@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "AddAlert": {
+      "Params": {
+        "STATUS": -100,
+        "STATUS_DESC": "OWNERSHIP_CD tag is missing or is empty."
+      },
+      "STATUS": 0
+    }
+  }
+}

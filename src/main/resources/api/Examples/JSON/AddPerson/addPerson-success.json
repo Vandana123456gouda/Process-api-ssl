@@ -1,0 +1,12 @@
+{
+  "Reply": {
+    "AddPerson": {
+      "Params": {
+        "PERSON_NO": 1000040,
+        "STATUS": 0,
+        "STATUS_DESC": "Person created."
+      },
+      "STATUS": 0
+    }
+  }
+}

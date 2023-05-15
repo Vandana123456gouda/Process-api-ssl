@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "GetAlert": {
+      "Params": {
+        "STATUS": -4,
+        "STATUS_DESC": "Invalid (#######) Account Number ."
+      },
+      "STATUS": 0
+    }
+  }
+}

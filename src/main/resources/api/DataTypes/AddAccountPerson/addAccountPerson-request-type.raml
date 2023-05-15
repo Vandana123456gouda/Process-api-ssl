@@ -1,0 +1,327 @@
+#%RAML 1.0 DataType 
+type: object
+# additionalProperties: false
+properties:
+  Request:
+    type: object
+    # additionalProperties: false
+    properties:
+      AddAccountPerson:
+        type: object
+        # additionalProperties: false
+        properties:
+          Params:
+            type: object
+            # additionalProperties: false
+            properties:
+              ACCOUNT_NO_CUSTOM:
+                type: string
+                maxLength: 30
+                required: false
+              ACCOUNT_NO_CUSTOM_2:
+                type: string
+                maxLength: 30
+                required: false
+              APPLICATION_NO:
+                type: string
+                maxLength: 10
+                required: false
+              CYCLE_CD:
+                type: string
+                maxLength: 5
+                required: false
+              ELIG_TXROLLOVER_YN:
+                type: string
+                maxLength: 1
+                required: false
+              TITLE_CD:
+                type: string
+                maxLength: 5
+                required: false
+              PERSON_FNM:
+                type: string
+                maxLength: 40
+                required: false
+              PERSON_MNM:
+                type: string
+                required: false
+              PERSON_LNM:
+                type: string
+                maxLength: 60
+                required: false
+              ACCOUNT_CLASS_DFLT:
+                type: string
+                maxLength: 5
+                required: false
+              ACCOUNT_STAT:
+                type: string
+                maxLength: 5
+                required: false
+              LANGUAGE_CD:
+                type: string
+                maxLength: 5
+                required: false
+              LIEN_STATUS:
+                type: string
+                maxLength: 5
+                required: false
+              LIEN_AMT:
+                type: number
+                required: false
+              SELECT_CD:
+                type: string
+                maxLength: 5
+                required: false
+              BILL_SORT_SEQ_CD:
+                type: string
+                maxLength: 5
+                required: false
+              BILL_COPIES:
+                type: number
+                required: false
+              CUSTOM_BILL_ID:
+                type: string
+                required: false
+              MIN_BILL_AMT:
+                type: number
+                required: false
+              MIN_BILL_TAXABLE_YN:
+                type: string
+                maxLength: 1
+                required: false
+              MIN_BILL_DISCOUNTABLE_YN:
+                type: string
+                required: false
+              NO_BILL_START_DT:
+                type: string
+                required: false
+              NO_BILL_END_DT:
+                type: string
+                required: false
+              ALLOW_DAYS_LATE:
+                type: string
+                required: false
+              CO_BYPASS_YN:
+                type: string
+                required: false
+              BYPASS_END_DT:
+                type: string
+                required: false
+              HOLD_WRITE_OFF_YN:
+                type: string
+                required: false
+              BYPASS_WRITE_OFF_YN:
+                type: string
+                required: false
+              BYPASS_WRTOF_END_DT:
+                type: string
+                required: false
+              INTEREST_EXEMPT_YN:
+                type: string
+                required: false
+              ATT_ON_HOLD_YN:
+                type: string
+                required: false
+              ATT_ON_HOLD_END_DT:
+                type: string
+                required: false
+              REBILL_AS_INSTBILL:
+                type: string
+                required: false
+              PRIVATE_YN:
+                type: string
+                required: false
+              PERSON_STAT:
+                type: string
+                required: false
+              I_GENDER:
+                type: string
+                required: false
+              I_DRIVERS_LIC_PROV:
+                type: string
+                required: false
+              I_DRIVERS_LIC_NO:
+                type: string
+                required: false
+              I_SIN:
+                type: string
+                required: false
+              O_BUSINESS_TP:
+                type: string
+                required: false
+              O_FEN:
+                type: string
+                required: false
+              BIRTH_INC_DT:
+                type: string
+                required: false
+              GENERIC_1:
+                type: string
+                required: false
+              GENERIC_2:
+                type: string
+                required: false
+              GENERIC_3:
+                type: string
+                required: false
+              IN_CARE_OF_OVRD:
+                type: string
+                required: false
+              ENVELOPE_MEMO_OVRD:
+                type: string
+                required: false
+              ADDRESS:
+                type: array
+                items:
+                  type: object
+                  # additionalProperties: false
+                  properties:
+                    ADDRESS_CD:
+                      type: string
+                      required: false
+                    HOUSE_NO:
+                      type: string
+                      required: false
+                    STREET_PFX_DIR:
+                      type: string
+                      required: false
+                    STREET_NM:
+                      type: string
+                      required: false
+                    STREET_NM_SFX:
+                      type: string
+                      required: false
+                    STREET_SFX_DIR:
+                      type: string
+                      required: false
+                    SEC_ADDR_ID:
+                      type: string
+                      required: false
+                    SEC_ADDR_RANGE:
+                      type: string
+                      required: false
+                    TER_ADDR_ID:
+                      type: string
+                      required: false
+                    TER_ADDR_RANGE:
+                      type: string
+                      required: false
+                    ADDR_ID_4:
+                      type: string
+                      required: false
+                    ADDR_RANGE_4:
+                      type: string
+                      required: false
+                    ROUTE_PFX:
+                      type: string
+                      required: false
+                    ADDR_ROUTE:
+                      type: string
+                      required: false
+                    CITY:
+                      type: string
+                      required: false
+                    PROVINCE_CD:
+                      type: string
+                      required: false
+                    POSTAL_CD:
+                      type: string
+                      required: false
+                    COUNTRY_CD:
+                      type: string
+                      required: false
+                    LOCATOR_ID:
+                      type: string
+                      required: false
+                    PO_BOX_NO:
+                      type: string
+                      required: false
+                    IN_CARE_OF:
+                      type: string
+                      required: false
+                    ENVELOPE_MEMO:
+                      type: string
+                      required: false
+                    DELIVERY_INST_TP:
+                      type: string
+                      required: false
+                    DELIVERY_INST_NM:
+                      type: string
+                      required: false
+                    ACTIVE_DT:
+                      type: string
+                      required: false
+                    INACTIVE_DT:
+                      type: string
+                      required: false
+                    SEASON_STR_MTH:
+                      type: string
+                      required: false
+                    SEASON_STR_DAY:
+                      type: string
+                      required: false
+                    SEASON_END_MTH:
+                      type: string
+                      required: false
+                    SEASON_END_DAY:
+                      type: string
+                      required: false
+                    PRIMARY_LOCATION_YN:
+                      type: string
+                      required: false
+                    ADDRESS_CMTS:
+                      type: string
+                      required: false
+              PHONE:
+                type: array
+                items:
+                  type: object
+                  # additionalProperties: false
+                  properties:
+                    PHONE_CD:
+                      type: string
+                      required: false
+                    PHONE_NO:
+                      type: string
+                      required: false
+                    EXTENSION_NO:
+                      type: string
+                      required: false
+                    ACTIVE_DT:
+                      type: string
+                      required: false
+                    INACTIVE_DT:
+                      type: string
+                      required: false
+                    PHONE_CMTS:
+                      type: string
+                      required: false
+              ACCOUNT_CMTS:
+                type: string
+                required: false
+              ACCOUNT_ATTRS?:
+                type: object
+                #additionalProperties: false
+                properties:
+                  ACCOUNT_ATTR:
+                    type: object
+                    properties:
+                      ATTRIBUTE_CD:
+                        type: string
+                        required: false
+                      ATTRIBUTE_VAL:
+                        type: string
+                        required: false
+              PERSON_ATTRS?:
+                type: object
+                #additionalProperties: false
+                properties:
+                  PERSON_ATTR:
+                    type: object
+                    properties:
+                      ATTRIBUTE_CD:
+                        type: string
+                        required: false
+                      ATTRIBUTE_VAL:
+                        type: string
+                        required: false

@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "GetBillDetails": {
+      "Params": {
+        "STATUS": -3,
+        "STATUS_DESC": "Occurrence not found(-2) for message VAR SFG, ID UM002S63.002"
+      },
+      "STATUS": 0
+    }
+  }
+}

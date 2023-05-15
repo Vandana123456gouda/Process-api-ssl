@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "AddMeterBillCode": {
+      "Params": {
+        "STATUS": -2,
+        "STATUS_DESC": "Unable to create installed meter bill code!"
+      },
+      "STATUS": 0
+    }
+  }
+}

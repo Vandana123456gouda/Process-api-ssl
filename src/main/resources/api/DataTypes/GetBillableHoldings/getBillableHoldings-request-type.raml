@@ -1,0 +1,18 @@
+#%RAML 1.0 DataType 
+type: object
+# additionalProperties: false
+properties:
+  Request:
+    type: object
+    # additionalProperties: false
+    properties:
+      GetBillableHoldings:
+        type: object
+        properties:
+          Params:
+            type: object
+            # additionalProperties: false
+            properties:
+              LOCATION_NO:
+                type: integer
+                required: false

@@ -1,0 +1,15 @@
+{
+  "Request": {
+    "SetAccountPhone": {
+      "Params": {
+        "ACCOUNT_NO": "",
+        "PHONE_CD": "",
+        "PHONE_NO": "",
+        "EXTENSION_NO": "",
+        "ACTIVE_DT": "",
+        "INACTIVE_DT": "",
+        "PHONE_CMTS": ""
+      }
+    }
+  }
+}

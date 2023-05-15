@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "GetLocation": {
+      "Params": {
+        "STATUS": -4,
+        "STATUS_DESC": "Invalid Location Number 300003."
+      },
+      "STATUS": 0
+    }
+  }
+}

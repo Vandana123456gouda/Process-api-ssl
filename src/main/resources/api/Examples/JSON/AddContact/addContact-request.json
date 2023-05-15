@@ -1,0 +1,18 @@
+{
+  "Request": {
+    "AddContact": {
+      "Params": {
+        "CONTACT_TP": "INQY",
+        "ACCOUNT_NO": "1010123",
+        "CONTACT_DESC": "Inquiry",
+        "RECEIVED_DTM": "2022-10-20 10:34:52.000",
+        "RECEIVED_BY": "KSUG",
+        "ATTACH_PARAMETERS": "",
+        "FILE": "",
+        "UPLOAD_YN": "",
+        "SOURCE_CD": "CONV ",
+        "SOURCE_ID": "2000058"
+      }
+    }
+  }
+}

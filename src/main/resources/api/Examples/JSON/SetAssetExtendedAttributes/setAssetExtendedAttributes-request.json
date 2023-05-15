@@ -1,0 +1,21 @@
+{
+  "Request": {
+    "SetAssetExtendedAttributes": {
+      "Params": {
+        "ASSET_AREA": "UM",
+        "ASSET_TP": "AC",
+        "ASSET_NO": "3081829",
+        "TRXN_DTM": "",
+        "FACTOR_CD": "",
+        "ASSET_ATTRS": [
+          {
+            "ASSET_ATTR": {
+              "ATTRIBUTE_CD": "Location AE",
+              "ATTRIBUTE_VAL": "CAE3"
+            }
+            }
+        ]
+      }
+    }
+  }
+}

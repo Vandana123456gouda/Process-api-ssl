@@ -1,0 +1,42 @@
+#%RAML 1.0 DataType
+type: object
+# additionalProperties: false
+properties:
+  Request:
+    type: object
+    # additionalProperties: false
+    properties:
+      SetAccountPhone:
+        type: object
+        # additionalProperties: false
+        properties:
+          Params:
+            type: object
+            # additionalProperties: false
+            properties:
+              ACCOUNT_NO:
+                type: integer
+                required: false
+              PHONE_CD:
+                type: string
+                maxLength: 5
+                required: true
+              PHONE_NO:
+                type: string
+                maxLength: 80
+                required: true
+              EXTENSION_NO:
+                type: string
+                maxLength: 10
+                required: false
+              ACTIVE_DT:
+                type: string
+                required: false
+              INACTIVE_DT:
+                type: string
+                required: false
+              PHONE_CMTS:
+                type: string
+                maxLength: 2000
+                required: false
+              

@@ -1,0 +1,245 @@
+{
+  "Reply": {
+    "GetServiceOrder": {
+      "Params": {
+        "STATUS": 0,
+        "ACTION_NO": 253,
+        "ACTION_CD": "MTSRD",
+        "ASSIGN_STATUS": "CLOSE",
+        "CREW_ID": "OAT08",
+        "ACTION_STAT": "CLOSE",
+        "ACCOUNT_NO": 2081585,
+        "LOCATION_NO": 3029267,
+        "LOCATION_CLASS": "RES",
+        "PERSON_NO": 1106280,
+        "PHONE_NO": "(808) 743-2380",
+        "V_NAME": "IKENA K ANAKALEA",
+        "ACTION_FDESC": "Meter Start Read",
+        "ACTION_INSTRUCT": "",
+        "ACTION_CMTS": "per dispatch okay to schedule 10/20/22.\nUnlock/get reading, leak/pressure test, range, heater, quoted $30 connect/dry, meter accessible, will be home.",
+        "EFFECTIVE_DT": 20221017,
+        "CLOSE_DTM": 20221020114535,
+        "PRIORITY_OVRD": 2,
+        "ACTION_SEQ": "",
+        "ACTION_TP": "SO",
+        "ASSET_RESTRICTED_YN": "F",
+        "ASSET_TP": "METER",
+        "DOCUMENT_NM": "",
+        "FOREIGN_ID": "",
+        "GEO_AREA_CD": "OAHU",
+        "OVERDUE_AMT": "",
+        "REQUEST_NO": 233,
+        "REQUEST_TP": "MOVIN",
+        "SERVICE_TP": "UGASM",
+        "SOURCE_CD": "CONCT",
+        "SOURCE_ID": 103,
+        "SUBSYSTEM_CD": "UM",
+        "SUSP_COLL_YN_OVRD": "F",
+        "DISPATCHER_ID": "DCRI - David Criste",
+        "DISPATCH_DTM": 20221020085953,
+        "DISPATCH_CMTS": "DCRI 20221020 09:00:07\nDCRI 20221020 08:58:34\nTBIG 20221018 17:26:31\nDispatched Action No 877 to Crew ID OAT06 \nTBIG 20221018 17:26:31\nDispatched Action No 877 to Crew ID OAT06 \nDCRI 20221020 08:58:34\nTBIG 20221018 17:26:31\nDispatched Action No 877 to Crew ID OAT06 \nRQUI 20221018 13:18:34\nDispatched Action No 253 to Crew ID OAT06",
+        "PRINT_Q_OVRD": "",
+        "REQUESTOR_NO": "",
+        "REQUESTOR_ADDR": "",
+        "REQUESTOR_EMAIL": "",
+        "REQUESTOR_PHONE": "",
+        "REQUESTOR_FNM": "",
+        "REQUESTOR_LNM": "",
+        "DISTRIBUTION_OVRD": "",
+        "OLD_DISTRIBUTION_CD": "",
+        "REDISTRIBUTED_BY": "",
+        "RESOLUTION_DT": 20221020,
+        "RESOLUTION_TM": "",
+        "RESOLUTION_CD": "CMPLT",
+        "RESOLVED_BY": "RKIM",
+        "RESOURCE_TP": "",
+        "RESOURCE_ID": "",
+        "SCHEDULED_DT": 20221020,
+        "SCHEDULED_TM": "",
+        "ADD_BY": "DVEN",
+        "ADD_DTM": 20221017160130,
+        "TRANSACTION_NO": 320,
+        "GEOLAT": 21.387845008,
+        "GEOLONG": -158.147089033,
+        "V_SADDRESS": "87182 HELELUA ST",
+        "CITY": "WAIANAE",
+        "METERS": {
+          "METER": [
+            {
+              "METER_TP": "G_5_10",
+              "SERIAL_NO": 144947,
+              "MULTIPLIER": 1.016961,
+              "METER_STAT": "OFF",
+              "METER_NEW_STAT": "ON",
+              "SERVICE_SEQ": 1,
+              "SERVICE_TP": "UGASM",
+              "METER_SEQ": 1,
+              "METER_NO": 144103,
+              "LOCATION_NO": 3029267,
+              "ACTION_METER_SEQ": 1,
+              "EXT_ASSET_NO": "",
+              "LINE_PRESSURE_SIZE": "W110",
+              "SITUAT_CD": "",
+              "SUBSIT_CD": "",
+              "CYCLE_CD": 18,
+              "ROUTE_NO": 113302,
+              "ROUTE_SEQ": 910,
+              "MTR_CHG_TP": "",
+              "CT_NUMER": "",
+              "CT_DENOM": "",
+              "PT_NUMER": "",
+              "PT_DENOM": "",
+              "AREA_SERVED": "01-FRONT",
+              "METER_LOCATION_ALERT": 1,
+              "FULL_SCALE_DEM_DIAL": "",
+              "INST_LOC_1": "",
+              "INST_LOC_2": "",
+              "INST_LOC_3": 4,
+              "COMMENTS": "",
+              "CONNECTION_NO": 23336,
+              "CONN_NO_SEQ": 1,
+              "CONN_LOC_DESC": "",
+              "LINKED_METER_YN": "F",
+              "READ_ENTRY_CD": "",
+              "READ_TP": "CUTON",
+              "READ_DT": 20221020,
+              "READ_TM": 111800,
+              "REGISTERS": {
+                "REGISTER": [
+                  {
+                    "REGISTER_NO": 1,
+                    "READ_TP": "CUTON",
+                    "READ_AMT": 1707,
+                    "REGISTER_TP": "M",
+                    "DIALS_READ_OVRD": 99999,
+                    "DETAIL_SEQ": 1,
+                    "SEAL_NO": "",
+                    "REG_BEHAV": "ACCUM",
+                    "MULTIPLIER": 10,
+                    "PERIOD_OF_DAY_CD": "",
+                    "REG_ON_YN": "T",
+                    "REG_ONOFF_DT": 20160830,
+                    "PREV_BILL_DT": 20230131,
+                    "PREV_EXCEPTION_CD": "",
+                    "PREV_READ_AMT": 1899,
+                    "PREV_READ_DT": 20230130,
+                    "PREV_READ_TM": 72847,
+                    "PREV_READ_TP": "RR",
+                    "PREV_READ_ENTRY_CD": "HH",
+                    "PREV_SEAL_NO": "",
+                    "REG_CHG_TP": "",
+                    "DEVICE_NO": 39597,
+                    "DEVICE_SERIAL_NO": 50909291,
+                    "DEVICE_TP": "REG",
+                    "READER_EXCEPTION_CD": "",
+                    "READER_CMTS": ""
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "DEVICES": {
+          "DEVICE": [
+            {
+              "DEV_CHG_TP": "",
+              "REGISTER_NO": 1,
+              "SERIAL_NO": 144947,
+              "METER_NO": 144103,
+              "METER_SERIAL_NO": 144947,
+              "DEVICE_NO": 39597,
+              "DEVICE_SERIAL_NO": 50909291
+            },
+            {
+              "DEV_CHG_TP": "",
+              "REGISTER_NO": 1,
+              "SERIAL_NO": 144947,
+              "METER_NO": 144103,
+              "METER_SERIAL_NO": 144947,
+              "DEVICE_NO": 39597,
+              "DEVICE_SERIAL_NO": 50909291
+            }
+          ]
+        },
+        "HOLDINGS": {
+          "HOLDING": [
+            {
+              "ACTION_ASSET_SEQ": 1,
+              "LOCATION_NO": 3029267,
+              "SERVICE_SEQ": 1,
+              "ASSET_TP": "METER",
+              "CONFIG_CD": "",
+              "COUNT": ""
+            },
+            {
+              "ACTION_ASSET_SEQ": 1,
+              "LOCATION_NO": 3029267,
+              "SERVICE_SEQ": 1,
+              "ASSET_TP": "METER",
+              "CONFIG_CD": "",
+              "COUNT": ""
+            }
+          ]
+        },
+        "SERVICE_LOCATIONS": {
+          "SERVICE_LOCATION": [
+            {
+              "LOCATION_NO": 3029267,
+              "SERVICE_SEQ": 1,
+              "SERVICE_TP": "UGASM"
+            },
+            {
+              "LOCATION_NO": 3029267,
+              "SERVICE_SEQ": 1,
+              "SERVICE_TP": "UGASM"
+            }
+          ]
+        },
+        "COMMENTS": {
+          "COMMENT": [
+            {
+              "TRANSACTION_NO": 0,
+              "ADD_BY": "RQUI",
+              "ADD_DTM": 20221018131834,
+              "CREW_ID": "OAT06",
+              "ASSIGN_STATUS": "DPTCH",
+              "COMMENT_CD": "UMSO",
+              "SEQ": 1,
+              "CHANGE_CMTS": "Dispatched Action No 253 to Crew ID OAT06"
+            },
+            {
+              "TRANSACTION_NO": 320,
+              "ADD_BY": "DCRI",
+              "ADD_DTM": 20221020085834,
+              "CREW_ID": "OAT06",
+              "ASSIGN_STATUS": "DPTCH",
+              "COMMENT_CD": "UMSO",
+              "SEQ": 1,
+              "CHANGE_CMTS": "TBIG 20221018 17:26:31\nDispatched Action No 877 to Crew ID OAT06"
+            }
+          ]
+        },
+        "RESOLUTIONS": {
+          "RESOLUTION": [
+            {
+              "RESOLUTION_CD": "CMPLT",
+              "RESOLUTION_SDESC": "Complete",
+              "RESOLUTION_FDESC": "Complete"
+            },
+            {
+              "RESOLUTION_CD": "CMPLT",
+              "RESOLUTION_SDESC": "Complete",
+              "RESOLUTION_FDESC": "Complete"
+            },
+            {
+              "RESOLUTION_CD": "CMPLT",
+              "RESOLUTION_SDESC": "Complete",
+              "RESOLUTION_FDESC": "Complete"
+            }
+          ]
+        }
+      },
+      "STATUS": 0
+    }
+  }
+}

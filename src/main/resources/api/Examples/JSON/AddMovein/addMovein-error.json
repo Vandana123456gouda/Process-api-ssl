@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "AddMoveIn": {
+      "Params": {
+        "STATUS": -4,
+        "STATUS_DESC": "Unable to Schedule Move-In for Account 2000001, Location 3000003! (RELRQ preference indicates a relationship must be selected.)"
+      },
+      "STATUS": 0
+    }
+  }
+}

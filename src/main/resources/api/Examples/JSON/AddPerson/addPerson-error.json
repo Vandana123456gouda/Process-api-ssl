@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "AddPerson": {
+      "Params": {
+        "STATUS": -1,
+        "STATUS_DESC": "Unable to create Person."
+      },
+      "STATUS": 0
+    }
+  }
+}

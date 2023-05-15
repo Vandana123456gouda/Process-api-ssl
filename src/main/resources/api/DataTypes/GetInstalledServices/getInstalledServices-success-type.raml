@@ -1,0 +1,93 @@
+#%RAML 1.0 DataType 
+type: object
+properties:
+  Reply:
+    type: object
+    properties:
+      GetInstalledServices:
+        type: object
+        properties:
+          Params:
+            type: object
+            properties:
+              INSTALLED_SERVICE:
+                type: object
+                properties:
+                  LOCATION_NO:
+                    type: integer
+                    required: false
+                  SERV_SEQ:
+                    type: integer
+                    required: false
+                  SERVICE_TP:
+                    type: string
+                    required: false
+                  SERVICE_PURPOSE:
+                    type: string
+                    required: false
+                  SERVICE_FDESC:
+                    type: string
+                    required: false
+                  SERVICE_SDESC:
+                    type: string
+                    required: false
+                  SERV_IDENTIFIER:
+                    type: string
+                    required: false
+                  SERV_IDENTIFIER2:
+                    type: string
+                    required: false
+                  ADDRESS:
+                    type: string
+                    required: false
+                  METERED_YN:
+                    type: string
+                    required: false
+                  SET_DT:
+                    type: integer
+                    required: false
+                  PULL_DT:
+                    type: string
+                    required: false
+                  SO_SET_FROM:
+                    type: string
+                    required: false
+                  SO_PULLED_FROM:
+                    type: string
+                    required: false
+                  SC_RESERVED_FROM:
+                    type: string
+                    required: false
+                  SF_RESERVED_FROM:
+                    type: string
+                    required: false
+                  ROUTE_NO_DFLT:
+                    type: integer
+                    required: false
+                  SORT_SEQ:
+                    type: integer
+                    required: false
+                  BYPASS_BILL_YN:
+                    type: string
+                    required: false
+                  SERV_DISTRICT_CD:
+                    type: string
+                    required: false
+                  BYPASS_MOVEIN_YN:
+                    type: string
+                    required: false
+                  SERV_CMTS:
+                    type: string
+                    required: false
+                  A_GEOLAT:
+                    type: number
+                    required: false
+                  A_GEOLONG:
+                    type: number
+                    required: false
+              STATUS:
+                type: integer
+                required: false
+          STATUS:
+            type: integer
+            required: false

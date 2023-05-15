@@ -1,0 +1,46 @@
+{
+  "Request": {
+    "AddAddressRecord": {
+      "Params": {
+        "PERSON_NO": 1076263,
+        "ACTIVE_DT": "19730101",
+        "INACTIVE_DT": "20230102",
+        "SEASON_STR_MTH": "",
+        "SEASON_STR_DAY": 7,
+        "SEASON_END_MTH": "",
+        "SEASON_END_DAY": 4,
+        "ADDRESS_CD": "FWD",
+        "HOUSE_NO": "11111",
+        "STREET_PFX_DIR": "S",
+        "STREET_NM": "1223 MAIN ST",
+        "STREET_NM_SFX": "ST",
+        "STREET_SFX_DIR": "",
+        "SEC_ADDR_ID": "UNIT",
+        "SEC_ADDR_RANGE": "111",
+        "TER_ADDR_ID": "",
+        "TER_ADDR_RANGE": "",
+        "ROUTE_PFX": "",
+        "ADDR_ROUTE": "2020",
+        "CITY": "HONOLULU",
+        "PROVINCE_CD": "HI",
+        "POSTAL_CD": "11111",
+        "PO_BOX_NO": "2020",
+        "DELIVERY_INST_TP": "",
+        "DELIVERY_INST_NM": "",
+        "COUNTRY_CD": "US",
+        "IN_CARE_OF": "ABC LLC",
+        "ENVELOPE_MEMO": "",
+        "DEFAULT_YN": "T",
+        "LIS_CD": "",
+        "LIS_NO": "",
+        "LIS_VALIDAT_STAT": "",
+        "PRIMARY_LOCATION_YN": "F",
+        "ADDR_ID_4": "",
+        "ADDR_RANGE_4": "",
+        "LOCATOR_ID": "",
+        "ADDRESS_CMTS": "",
+        "PERSON_ADDRESS_YN": "T"
+      }
+    }
+  }
+}

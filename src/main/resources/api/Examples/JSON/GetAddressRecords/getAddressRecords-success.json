@@ -1,0 +1,54 @@
+{
+  "Reply": {
+    "GetAddressRecords": {
+      "Params": {
+        "STATUS": 0,
+        "ADDRESS_COUNT": 1,
+        "ADDRESS": {
+          "ADDRESS_SEQ": 1,
+          "ACTIVE_DT": 19730101,
+          "INACTIVE_DT": "",
+          "SEASON_STR_MTH": "",
+          "SEASON_STR_DAY": "",
+          "SEASON_END_MTH": "",
+          "SEASON_END_DAY": "",
+          "ADDRESS_CD": "FWD",
+          "HOUSE_NO": "",
+          "STREET_PFX_DIR": "",
+          "STREET_NM": "3633 WAIALAE AVE BLDG C210",
+          "STREET_NM_SFX": "",
+          "STREET_SFX_DIR": "",
+          "SEC_ADDR_ID": "",
+          "SEC_ADDR_RANGE": "",
+          "TER_ADDR_ID": "",
+          "TER_ADDR_RANGE": "",
+          "ROUTE_PFX": "",
+          "ADDR_ROUTE": "",
+          "CITY": "HONOLULU",
+          "PROVINCE_CD": "HI",
+          "POSTAL_CD": 96816,
+          "PO_BOX_NO": "",
+          "DELIVERY_INST_TP": "",
+          "DELIVERY_INST_NM": "",
+          "COUNTRY_CD": "",
+          "IN_CARE_OF": "DOE State of HI-OFO Auxiliary Svcs",
+          "ENVELOPE_MEMO": "",
+          "DEFAULT_YN": "T",
+          "LIS_CD": "",
+          "LIS_NO": "",
+          "LIS_VALIDAT_STAT": "",
+          "PRIMARY_LOCATION_YN": "",
+          "ADDR_ID_4": "",
+          "ADDR_RANGE_4": "",
+          "LOCATOR_ID": "",
+          "ADDRESS_CMTS": "",
+          "PERSON_ADDRESS_YN": "T",
+          "ACCOUNT": {
+            "ACCOUNT_NO": 2100119
+          }
+        }
+      },
+      "STATUS": 0
+    }
+  }
+}

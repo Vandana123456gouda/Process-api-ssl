@@ -1,0 +1,70 @@
+#%RAML 1.0 DataType 
+type: object
+# additionalProperties: false
+properties:
+  Request:
+    type: object
+    # additionalProperties: false
+    properties:
+      AddAccountRelationship:
+        type: object
+        # additionalProperties: false
+        properties:
+          Params:
+            type: object
+            # additionalProperties: false
+            properties:
+              PERSON_NO:
+                type: integer
+                required: true
+              ACCOUNT_NO:
+                type: integer
+                required: true
+              REL_PERSON_NO:
+                type: integer
+                required: true
+              RELATIONSHIP_TP:
+                type: string
+                maxLength: 5
+                required: true
+              ACTIVE_DT:
+                type: integer
+                required: true
+              INACTIVE_DT:
+                type: string
+                required: false
+              NOTIFY_BILL_YN:
+                type: string
+                enum: [T,F,""]
+                required: false
+              NOTIFY_CO_YN:
+                type: string
+                enum: [T,F,""]
+                required: false
+              NOTIFY_MOVEOUT_YN:
+                type: string
+                enum: [T,F,""]
+                required: false
+              EXPIRY_CD:
+                type: integer
+                enum: [1,2,3]
+                required: false
+              REL_CMTS:
+                type: string
+                maxLength: 2000
+                required: false
+              GENERIC_1:
+                type: string
+                maxLength: 50
+                required: false
+              GENERIC_2:
+                type: string
+                maxLength: 50
+                required: false
+              GENERIC_3:
+                type: string
+                maxLength: 50
+                required: false
+              UPPER_LIMT:
+                type: string
+                required: false

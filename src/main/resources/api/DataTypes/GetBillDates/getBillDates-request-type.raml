@@ -1,0 +1,25 @@
+#%RAML 1.0 DataType 
+type: object
+# additionalProperties: false
+properties:
+  Request:
+    type: object
+    # additionalProperties: false
+    properties:
+      GetBillDates:
+        type: object
+        # additionalProperties: false
+        properties:
+          Params:
+            type: object
+            # additionalProperties: false
+            properties:
+              ACCOUNT_NO:
+                type: number
+                required: true
+              FROM_DT:
+                type: string
+                required: true
+              TO_DT:
+                type: string
+                required: true

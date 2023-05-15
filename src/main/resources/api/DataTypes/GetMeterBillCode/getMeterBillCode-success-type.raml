@@ -1,0 +1,488 @@
+#%RAML 1.0 DataType 
+type: object
+properties:
+  Reply:
+    type: object
+    properties:
+      GetMeterBillCode:
+        type: object
+        properties:
+          Params:
+            type: object
+            properties:
+              LOCATION_NO:
+                type: integer
+                required: false
+              BILL_CODES:
+                type: object
+                properties:
+                  METER_BILL_CODE:
+                    type: object
+                    properties:
+                      ACCOUNT_NO:
+                        type: integer
+                        required: false
+                      LOCATION_NO:
+                        type: integer
+                        required: false
+                      SERVICE_SEQ:
+                        type: integer
+                        required: false
+                      METER_SEQ:
+                        type: integer
+                        required: false
+                      BILL_CD:
+                        type: integer
+                        required: false
+                      ACTIVE_DT:
+                        type: integer
+                        required: false
+                      INACTIVE_DT:
+                        type: string
+                        required: false
+                      MBC_MULTIPLIER:
+                        type: string
+                        required: false
+                      TAX_OVERRIDE_CD:
+                        type: string
+                        required: false
+                      VOIDED_YN:
+                        type: string
+                        required: false
+                      METER_BILL_CD_CMTS:
+                        type: string
+                        required: false
+                      BILL_CD_ACTIVE_DT:
+                        type: integer
+                        required: false
+                      BILL_CD_INACTIVE_DT:
+                        type: string
+                        required: false
+                      BILL_CD_FDESC:
+                        type: string
+                        required: false
+                      BILL_CD_SDESC:
+                        type: string
+                        required: false
+                      ACTIVE_MTH_START:
+                        type: string
+                        required: false
+                      ACTIVE_DAY_START:
+                        type: string
+                        required: false
+                      ACTIVE_MTH_END:
+                        type: string
+                        required: false
+                      ACTIVE_DAY_END:
+                        type: string
+                        required: false
+                      BILL_CD_DISCOUNTABLE_YN:
+                        type: string
+                        required: false
+                      BILL_CD_TAXABLE_YN:
+                        type: string
+                        required: false
+                      BILL_PRINT_CD:
+                        type: string
+                        required: false
+                      BASE_RATE_CD:
+                        type: string
+                        required: false
+                      CONS_RATE_CD:
+                        type: string
+                        required: false
+                      DEM_READ_CALC_TP:
+                        type: string
+                        required: false
+                      UNIT_CALC_FACTOR:
+                        type: string
+                        required: false
+                      UNIT_CALC_FACTOR_PRF_YN:
+                        type: string
+                        required: false
+                      MIN_CHG:
+                        type: string
+                        required: false
+                      MIN_BASE_YN:
+                        type: string
+                        required: false
+                      MIN_CONS_YN:
+                        type: string
+                        required: false
+                      MIN_DEMAND_YN:
+                        type: string
+                        required: false
+                      MIN_FINAL_ONLY_YN:
+                        type: string
+                        required: false
+                      MAX_CHG:
+                        type: string
+                        required: false
+                      MAX_BASE_YN:
+                        type: string
+                        required: false
+                      MAX_CONS_YN:
+                        type: string
+                        required: false
+                      MAX_DEMAND_YN:
+                        type: string
+                        required: false
+                      MIN_CHARGE_MODE:
+                        type: string
+                        required: false
+                      AR_ITEM_TP:
+                        type: string
+                        required: false
+                      AR_CAT_CD:
+                        type: string
+                        required: false
+                      AR_SUM_CD:
+                        type: string
+                        required: false
+                      AR_MAP_CD:
+                        type: string
+                        required: false
+                      CAR_FWD_AR_ITEM_TP:
+                        type: string
+                        required: false
+                      CAR_FWD_AR_CAT_CD:
+                        type: string
+                        required: false
+                      CAR_FWD_AR_SUM_CD:
+                        type: string
+                        required: false
+                      CAR_FWD_AR_MAP_CD:
+                        type: string
+                        required: false
+                      STANDARD_DAYS_OVRD:
+                        type: string
+                        required: false
+                      FACTOR_CD:
+                        type: string
+                        required: false
+                      FINAL_BILL_BASE_YN:
+                        type: string
+                        required: false
+                      CONS_BLOCK_YN:
+                        type: string
+                        required: false
+                      KVAR_READ_CALC_TP:
+                        type: string
+                        required: false
+                      MIN_KVAR_YN:
+                        type: string
+                        required: false
+                      MAX_KVAR_YN:
+                        type: string
+                        required: false
+                      BASE_C14_YN:
+                        type: string
+                        required: false
+                      CONS_C14_YN:
+                        type: string
+                        required: false
+                      KVAR_C14_YN:
+                        type: string
+                        required: false
+                      DMND_C14_YN:
+                        type: string
+                        required: false
+                      TOU_CLASS_CD:
+                        type: string
+                        required: false
+                      BASE_TAXABLE_YN:
+                        type: string
+                        required: false
+                      CONS_TAXABLE_YN:
+                        type: string
+                        required: false
+                      DEM_TAXABLE_YN:
+                        type: string
+                        required: false
+                      KVAR_TAXABLE_YN:
+                        type: string
+                        required: false
+                      BILL_CD_TAX_BUCKET:
+                        type: string
+                        required: false
+                      BASE_TAX_BUCKET:
+                        type: string
+                        required: false
+                      CONS_TAX_BUCKET:
+                        type: string
+                        required: false
+                      DEM_TAX_BUCKET:
+                        type: string
+                        required: false
+                      KVAR_TAX_BUCKET:
+                        type: string
+                        required: false
+                      REFERENCE_ONLY_YN:
+                        type: string
+                        required: false
+                      WEIGHTED_AVG_YN:
+                        type: string
+                        required: false
+                      RETAIL_CHARGE_YN:
+                        type: string
+                        required: false
+                      PF_ADJUST_YN:
+                        type: string
+                        required: false
+                      BASE_DISC_CAP_YN:
+                        type: string
+                        required: false
+                      CONS_DISC_CAP_YN:
+                        type: string
+                        required: false
+                      DMND_DISC_CAP_YN:
+                        type: string
+                        required: false
+                      KVAR_DISC_CAP_YN:
+                        type: string
+                        required: false
+                      BASE_NONZERO_CONS_YN:
+                        type: string
+                        required: false
+                      CONS_CONTEXT:
+                        type: string
+                        required: false
+                      DEM_CONTEXT:
+                        type: string
+                        required: false
+                      KVAR_CONTEXT:
+                        type: string
+                        required: false
+                      LF_CONTEXT:
+                        type: string
+                        required: false
+                      PF_CONTEXT:
+                        type: string
+                        required: false
+                      HIGH_AMT:
+                        type: string
+                        required: false
+                      LOW_AMT:
+                        type: string
+                        required: false
+                      RATCHET_CD:
+                        type: string
+                        required: false
+                      CONS_REPORT_CONTEXT:
+                        type: string
+                        required: false
+                      BASE_REPORT_CONTEXT:
+                        type: string
+                        required: false
+                      DEM_REPORT_CONTEXT:
+                        type: string
+                        required: false
+                      KVAR_REPORT_CONTEXT:
+                        type: string
+                        required: false
+                      MIN_CHG_REPORT_CONTEXT:
+                        type: string
+                        required: false
+                      FOR_PREPAY_YN:
+                        type: string
+                        required: false
+                      GENERIC1_YN:
+                        type: string
+                        required: false
+                      GENERIC2_YN:
+                        type: string
+                        required: false
+                      GENERIC3_YN:
+                        type: string
+                        required: false
+                      BILL_CD_CMTS:
+                        type: string
+                        required: false
+                      BILL_CODE_CHARGE_MODE:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            CHARGE_MODE:
+                              type: string
+                              required: false
+                            CHARGE_MODE_SEQ:
+                              type: integer
+                              required: false
+                            CHARGE_MODE_TP:
+                              type: string
+                              required: false
+                            CM_DESC:
+                              type: string
+                              required: false
+                            CM_FIXED_CHARGE:
+                              type: string
+                              required: false
+                            CM_FIXED_CONS:
+                              type: string
+                              required: false
+                            CM_MIN_CONS:
+                              type: string
+                              required: false
+                            CM_MAX_CONS:
+                              type: string
+                              required: false
+                            CM_FACTOR:
+                              type: string
+                              required: false
+                            CM_FACTOR_PREF_CD:
+                              type: string
+                              required: false
+                            CM_BASE_RATE_CD:
+                              type: string
+                              required: false
+                            CM_CONS_RATE_CD:
+                              type: string
+                              required: false
+                            CM_SERV_TP:
+                              type: string
+                              required: false
+                            CM_BASE_CHARGE_YN:
+                              type: string
+                              required: false
+                            CM_CONS_CHARGE_YN:
+                              type: string
+                              required: false
+                            CM_DEMAND_CHARGE_YN:
+                              type: string
+                              required: false
+                            CM_DISCOUNTABLE_YN:
+                              type: string
+                              required: false
+                            CM_TAXABLE_YN:
+                              type: string
+                              required: false
+                            CM_TAX_BUCKET:
+                              type: string
+                              required: false
+                            CM_ONE_TIME_CHG_YN:
+                              type: string
+                              required: false
+                            CM_PRORATEABLE_YN:
+                              type: string
+                              required: false
+                            CM_ASSET_TP:
+                              type: string
+                              required: false
+                            CM_BILL_CD:
+                              type: string
+                              required: false
+                            CM_SURCHARGE_TP:
+                              type: string
+                              required: false
+                            VOIDED_YN:
+                              type: string
+                              required: false
+                            FACTOR_CD:
+                              type: string
+                              required: false
+                            CM_FINAL_BILL_YN:
+                              type: string
+                              required: false
+                            CM_DEM_READ_CALC_TP:
+                              type: string
+                              required: false
+                            CM_MIN_CHG_YN:
+                              type: string
+                              required: false
+                            CM_MAX_CHG_YN:
+                              type: string
+                              required: false
+                            CM_AR_ITEM_TP:
+                              type: string
+                              required: false
+                            CM_AR_CAT_CD:
+                              type: string
+                              required: false
+                            CM_AR_SUM_CD:
+                              type: string
+                              required: false
+                            CM_AR_MAP_CD:
+                              type: string
+                              required: false
+                            CM_REFUND_ONLY_YN:
+                              type: string
+                              required: false
+                            CM_EQUATION:
+                              type: string
+                              required: false
+                            CM_C14_CHARGE_YN:
+                              type: string
+                              required: false
+                            CM_LINK_SEQ:
+                              type: string
+                              required: false
+                            CM_OPERATION_SEQ:
+                              type: integer
+                              required: false
+                            CM_ASSET_INSTALLED_YN:
+                              type: string
+                              required: false
+                            CM_ASSET_ATTRIBUTE:
+                              type: string
+                              required: false
+                            CM_ASSET_VALUE:
+                              type: string
+                              required: false
+                            CM_METER_DISTINCT_YN:
+                              type: string
+                              required: false
+                            CM_PRIMARY_BASE_YN:
+                              type: string
+                              required: false
+                            CM_DISC_CAP_YN:
+                              type: string
+                              required: false
+                            CM_APPLY_CAP_YN:
+                              type: string
+                              required: false
+                            CM_BC_MIN_CHG_SRC_YN:
+                              type: string
+                              required: false
+                            CM_CONTEXT:
+                              type: string
+                              required: false
+                            REPORT_CONTEXT:
+                              type: string
+                              required: false
+                            CM_BASE_RPT_CTXT:
+                              type: string
+                              required: false
+                            CM_CONS_RPT_CTXT:
+                              type: string
+                              required: false
+                            CM_DEM_RPT_CTXT:
+                              type: string
+                              required: false
+                            CM_KVAR_RPT_CTXT:
+                              type: string
+                              required: false
+                            CM_GENERIC1_YN:
+                              type: string
+                              required: false
+                            CM_GENERIC2_YN:
+                              type: string
+                              required: false
+                            CM_GENERIC3_YN:
+                              type: string
+                              required: false
+                            FROM_DT:
+                              type: string
+                              required: false
+                            TO_DT:
+                              type: string
+                              required: false
+                            CM_CMTS:
+                              type: string
+                              required: false
+              STATUS:
+                type: integer
+                required: false
+          STATUS:
+            type: integer
+            required: false

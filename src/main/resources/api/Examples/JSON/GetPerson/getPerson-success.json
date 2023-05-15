@@ -1,0 +1,45 @@
+{
+  "Reply": {
+    "GetPerson": {
+      "Params": {
+        "PERSON": {
+          "V_PARSE_NAME": "HOKULANI ELEMENTARY SCHOOL",
+          "O_FEN": "",
+          "PIN": "",
+          "I_DRIVERS_LIC_NO": "",
+          "I_SIN": "",
+          "PERSON_NO": 1000017,
+          "PRIVATE_YN": "F",
+          "PERSON_ID_CUSTOM": 82,
+          "PERSON_STAT": "ACT",
+          "TITLE_CD": "",
+          "PERSON_FNM": "",
+          "PERSON_MNM": "",
+          "PERSON_LNM": "HOKULANI ELEMENTARY SCHOOL",
+          "ADDR_SEQ_DFLT": 1,
+          "PHONE_SEQ_DFLT": 1,
+          "IN_CARE_OF_OVRD": "",
+          "ENVELOPE_MEMO_OVRD": "",
+          "BIRTH_INC_DT": "",
+          "I_DRIVERS_LIC_PROV": "",
+          "I_GENDER": "",
+          "O_BUSINESS_TP": "ED",
+          "SELECT_CD": "",
+          "BANKRUPT_YN": "F",
+          "BANKRUPT_EXPIRY_DT": "",
+          "PENALTY_DEPOSIT_YN": "F",
+          "GENERIC_1": "",
+          "GENERIC_2": "",
+          "GENERIC_3": "",
+          "VOTING_DSCT": "",
+          "LOGIN_NM": "",
+          "HASH_NM": "Hokulani Elementary School",
+          "PERSON_CMTS": "",
+          "V_NAME": "",
+          "STATUS": 0
+        }
+      },
+      "STATUS": 0
+    }
+  }
+}

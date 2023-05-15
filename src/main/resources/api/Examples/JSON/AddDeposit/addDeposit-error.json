@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "AddDeposit": {
+      "Params": {
+        "STATUS": -1,
+        "STATUS_DESC": "Unable to create deposit! (Account Number (1000017) does not exist.)"
+      },
+      "STATUS": 0
+    }
+  }
+}

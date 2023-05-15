@@ -1,0 +1,46 @@
+#%RAML 1.0 DataType 
+type: object
+# additionalProperties: false
+properties:
+  Request:
+    type: object
+    # additionalProperties: false
+    properties:
+      AddContact:
+        type: object
+        # additionalProperties: false
+        properties:
+          Params:
+            type: object
+            # additionalProperties: false
+            properties:
+              CONTACT_TP:
+                type: string
+                required: true
+              ACCOUNT_NO:
+                type: string
+                required: false
+              CONTACT_DESC:
+                type: string
+                required: true
+              RECEIVED_DTM:
+                type: string
+                required: false
+              RECEIVED_BY:
+                type: string
+                required: false
+              ATTACH_PARAMETERS:
+                type: string
+                required: false
+              FILE:
+                type: string
+                required: false
+              UPLOAD_YN:
+                type: string
+                required: false
+              SOURCE_CD:
+                type: string
+                required: false
+              SOURCE_ID:
+                type: string
+                required: false

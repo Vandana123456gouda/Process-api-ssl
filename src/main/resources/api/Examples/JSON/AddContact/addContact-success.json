@@ -1,0 +1,12 @@
+{
+  "Reply": {
+    "AddContact": {
+      "Params": {
+        "STATUS": "0",
+        "CONTACT_NO": "2251232",
+        "STATUS_DESC": "ontact Created."
+      },
+      "STATUS": "0"
+    }
+  }
+}

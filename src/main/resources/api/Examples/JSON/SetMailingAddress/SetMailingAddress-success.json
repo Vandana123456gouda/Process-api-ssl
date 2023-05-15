@@ -1,0 +1,10 @@
+{
+  "Reply": {
+    "SetMailingAddress": {
+      "Params": {
+        "STATUS": 0
+      },
+      "STATUS": ""
+    }
+  }
+}

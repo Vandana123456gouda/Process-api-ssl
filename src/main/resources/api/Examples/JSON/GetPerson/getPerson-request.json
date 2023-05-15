@@ -1,0 +1,9 @@
+{
+  "Request": {
+    "GetPerson": {
+      "Params": {
+        "PERSON_NO": 1000017
+      }
+    }
+  }
+}

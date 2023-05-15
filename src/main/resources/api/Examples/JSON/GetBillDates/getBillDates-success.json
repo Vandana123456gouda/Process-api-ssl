@@ -1,0 +1,66 @@
+{
+  "Reply": {
+    "GetBillDates": {
+      "Params": {
+        "STATUS": 0,
+        "BILLS": {
+          "BILL": [
+            {
+              "BILL_RUN_DT": "20230116",
+              "BILL_RUN_TM": "190004",
+              "INVOICE_NO": "203051",
+              "BILL_TP": "REGLR",
+              "BILL_DT": "20230116",
+              "POSTING_DT": "20230116",
+              "GL_YEAR": "2023",
+              "GL_PERIOD": 1,
+              "PERIOD_FROM_DT": "20221206",
+              "PERIOD_TO_DT": "20230105",
+              "BILLING_DAYS": 31
+            },
+            {
+              "BILL_RUN_DT": "20221212",
+              "BILL_RUN_TM": "190004",
+              "INVOICE_NO": "125616",
+              "BILL_TP": "REGLR",
+              "BILL_DT": "20221212",
+              "POSTING_DT": "20221212",
+              "GL_YEAR": "2022",
+              "GL_PERIOD": 12,
+              "PERIOD_FROM_DT": "20221104",
+              "PERIOD_TO_DT": "20221205",
+              "BILLING_DAYS": 32
+            },
+            {
+              "BILL_RUN_DT": "20221116",
+              "BILL_RUN_TM": "190004",
+              "INVOICE_NO": "59023",
+              "BILL_TP": "REGLR",
+              "BILL_DT": "20221116",
+              "POSTING_DT": "20221116",
+              "GL_YEAR": "2022",
+              "GL_PERIOD": 11,
+              "PERIOD_FROM_DT": "20221005",
+              "PERIOD_TO_DT": "20221103",
+              "BILLING_DAYS": 30
+            },
+            {
+              "BILL_RUN_DT": "20221011",
+              "BILL_RUN_TM": "120010",
+              "INVOICE_NO": "83322736",
+              "BILL_TP": "REGLR",
+              "BILL_DT": "20221011",
+              "POSTING_DT": "",
+              "GL_YEAR": "20",
+              "GL_PERIOD": 10,
+              "PERIOD_FROM_DT": "20220907",
+              "PERIOD_TO_DT": "20221004",
+              "BILLING_DAYS": 27
+            }
+          ]
+        }
+      },
+      "STATUS": 0
+    }
+  }
+}

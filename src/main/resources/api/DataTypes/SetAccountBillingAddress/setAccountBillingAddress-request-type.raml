@@ -1,0 +1,164 @@
+#%RAML 1.0 DataType
+type: object
+# additionalProperties: false
+properties:
+  Request:
+    type: object
+    # additionalProperties: false
+    properties:
+      SetAccountBillingAddress:
+        type: object
+        # additionalProperties: false
+        properties:
+          Params:
+            type: object
+            # additionalProperties: false
+            properties:
+              ACCOUNT_NO:
+                type: integer
+                required: false
+              ACTIVE_DT:
+                type: string
+                required: false
+              INACTIVE_DT:
+                type: string
+                required: false
+              SEASON_STR_MTH:
+                type: string
+                maxLength: 3
+                required: false
+              SEASON_STR_DAY:
+                type: integer
+                required: false
+              SEASON_END_MTH:
+                type: string
+                maxLength: 3
+                required: false
+              SEASON_END_DAY:
+                type: integer
+                required: false
+              ADDRESS_CD:
+                type: string
+                maxLength: 5
+                required: false
+              HOUSE_NO:
+                type: string
+                maxLength: 18
+                required: false
+              STREET_PFX_DIR:
+                type: string
+                maxLength: 5
+                required: false
+              STREET_NM:
+                type: string
+                maxLength: 40
+                required: false
+              STREET_NM_SFX:
+                type: string
+                maxLength: 6
+                required: false
+              STREET_SFX_DIR:
+                type: string
+                maxLength: 5
+                required: false
+              SEC_ADDR_ID:
+                type: string
+                maxLength: 5
+                required: false
+              SEC_ADDR_RANGE:
+                type: string
+                maxLength: 18
+                required: false
+              TER_ADDR_ID:
+                type: string
+                maxLength: 5
+                required: false
+              TER_ADDR_RANGE:
+                type: string
+                maxLength: 18
+                required: false
+              ADDR_ID_4:
+                type: string
+                maxLength: 5
+                required: false
+              ADDR_RANGE_4:
+                type: string
+                maxLength: 18
+                required: false
+              LOCATOR_ID:
+                type: string
+                maxLength: 5
+                required: false
+              ROUTE_PFX:
+                type: string
+                maxLength: 5
+                required: false
+              ADDR_ROUTE:
+                type: string
+                maxLength: 5
+                required: false
+              CITY:
+                type: string
+                maxLength: 30
+                required: false
+              PROVINCE_CD:
+                type: string
+                maxLength: 5
+                required: false
+              POSTAL_CD:
+                type: string
+                maxLength: 13
+                required: false
+              PO_BOX_NO:
+                type: string
+                maxLength: 10
+                required: false
+              DELIVERY_INST_TP:
+                type: string
+                maxLength: 5
+                required: false
+              DELIVERY_INST_NM:
+                type: string
+                maxLength: 30
+                required: false
+              COUNTRY_CD:
+                type: string
+                maxLength: 5
+                required: false
+              IN_CARE_OF:
+                type: string
+                maxLength: 40
+                required: false
+              ENVELOPE_MEMO:
+                type: string
+                maxLength: 40
+                required: false
+              LIS_CD:
+                type: string
+                maxLength: 5
+                required: false
+              LIS_NO:
+                type: string
+                maxLength: 15
+                required: false
+              LIS_VALIDAT_STAT:
+                type: string
+                maxLength: 5
+                required: false
+              PRIMARY_LOCATION_YN:
+                type: string
+                maxLength: 1
+                required: false
+              ADDRESS_CMTS:
+                type: string
+                maxLength: 2000
+                required: false
+              
+
+
+                
+
+
+              
+                
+

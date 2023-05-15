@@ -1,0 +1,267 @@
+#%RAML 1.0 DataType 
+type: object
+# additionalProperties: false
+properties:
+  Request:
+    type: object
+    # additionalProperties: false
+    properties:
+      AddPerson:
+        type: object
+        # additionalProperties: false
+        properties:
+          Params:
+            type: object
+            # additionalProperties: false
+            properties:
+              PERSON_ID_CUSTOM:
+                type: string
+                maxLength: 15
+                required: false
+              TITLE_CD:
+                type: string
+                maxLength: 5
+                required: false
+              PERSON_FNM:
+                type: string
+                maxLength: 40
+                required: false
+              PERSON_MNM:
+                type: string
+                maxLength: 40
+                required: false
+              PERSON_LNM:
+                type: string
+                maxLength: 40
+                required: false
+              PRIVATE_YN:
+                type: string
+                enum: [T,F]
+                required: false
+              PERSON_STAT:
+                type: string
+                maxLength: 5
+                required: false
+              I_GENDER:
+                type: string
+                maxLength: 5
+                required: false
+              I_DRIVERS_LIC_PROV:
+                type: string
+                maxLength: 5
+                required: false
+              I_DRIVERS_LIC_NO:
+                type: string
+                maxLength: 40
+                required: false
+              I_SIN:
+                type: string
+                maxLength: 11
+                required: false
+              O_BUSINESS_TP:
+                type: string
+                maxLength: 5
+                required: false
+              O_FEN:
+                type: string
+                maxLength: 20
+                required: false
+              BIRTH_INC_DT:
+                type: integer
+                required: false
+              SELECT_CD:
+                type: string
+                maxLength: 5
+                required: false
+              GENERIC_1:
+                type: string
+                required: false
+              GENERIC_2:
+                type: string
+                required: false
+              GENERIC_3:
+                type: string
+                required: false
+              IN_CARE_OF_OVRD:
+                type: string
+                maxLength: 40
+                required: false
+              ENVELOPE_MEMO_OVRD:
+                type: string
+                maxLength: 40
+                required: false
+              ADDRESS:
+                type: array
+                items:
+                  type: object
+                # additionalProperties: false
+                  properties:
+                    ADDRESS_CD:
+                      type: string
+                      maxLength: 5
+                      required: false
+                    HOUSE_NO:
+                      type: string
+                      maxLength: 18
+                      required: false
+                    STREET_PFX_DIR:
+                      type: string
+                      maxLength: 5
+                      required: false
+                    STREET_NM:
+                      type: string
+                      maxLength: 40
+                      required: false
+                    STREET_NM_SFX:
+                      type: string
+                      maxLength: 6
+                      required: false
+                    STREET_SFX_DIR:
+                      type: string
+                      maxLength: 5
+                      required: false
+                    SEC_ADDR_ID:
+                      type: string
+                      maxLength: 5
+                      required: false
+                    SEC_ADDR_RANGE:
+                      type: string
+                      maxLength: 18
+                      required: false
+                    TER_ADDR_ID:
+                      type: string
+                      maxLength: 5
+                      required: false
+                    TER_ADDR_RANGE:
+                      type: string
+                      maxLength: 18
+                      required: false
+                    ADDR_ID_4:
+                      type: string
+                      maxLength: 5
+                      required: false
+                    ADDR_RANGE_4:
+                      type: string
+                      maxLength: 18
+                      required: false
+                    ROUTE_PFX:
+                      type: string
+                      maxLength: 5
+                      required: false
+                    ADDR_ROUTE:
+                      type: string
+                      maxLength: 5
+                      required: false
+                    CITY:
+                      type: string
+                      maxLength: 30
+                      required: false
+                    PROVINCE_CD:
+                      type: string
+                      maxLength: 5
+                      required: false
+                    POSTAL_CD:
+                      type: string
+                      maxLength: 13
+                      required: false
+                    COUNTRY_CD:
+                      type: string
+                      maxLength: 5
+                      required: false
+                    LOCATOR_ID:
+                      type: string
+                      maxLength: 5
+                      required: false
+                    PO_BOX_NO:
+                      type: string
+                      maxLength: 10
+                      required: false
+                    IN_CARE_OF:
+                      type: string
+                      maxLength: 40
+                      required: false
+                    ENVELOPE_MEMO:
+                      type: string
+                      maxLength: 40
+                      required: false
+                    DELIVERY_INST_TP:
+                      type: string
+                      maxLength: 5
+                      required: false
+                    DELIVERY_INST_NM:
+                      type: string
+                      maxLength: 30
+                      required: false
+                    ACTIVE_DT:
+                      type: integer
+                      required: false
+                    INACTIVE_DT:
+                      type: integer
+                      required: false
+                    SEASON_STR_MTH:
+                      type: string
+                      maxLength: 3
+                      required: false
+                    SEASON_STR_DAY:
+                      type: string
+                      required: false
+                    SEASON_END_MTH:
+                      type: string
+                      maxLength: 3
+                      required: false
+                    SEASON_END_DAY:
+                      type: string
+                      required: false
+                    PRIMARY_LOCATION_YN:
+                      type: string
+                      enum: [F,T]
+                      required: false
+                    ADDRESS_CMTS:
+                      type: string
+                      maxLength: 2000
+                      required: false
+              PHONE:
+                type: array
+                items:
+                  type: object
+                # additionalProperties: false
+                  properties:
+                    PHONE_CD:
+                      type: string
+                      maxLength: 5
+                      required: false
+                    PHONE_NO:
+                      type: string
+                      maxLength: 80
+                      required: false
+                    EXTENSION_NO:
+                      type: string
+                      maxLength: 10
+                      required: false
+                    ACTIVE_DT:
+                      type: integer
+                      required: false
+                    INACTIVE_DT:
+                      type: integer
+                      required: false
+                    PHONE_CMTS:
+                      type: string
+                      maxLength: 2000
+                      required: false
+              PERSON_CMTS:
+                type: string
+                maxLength: 2000
+                required: false
+              PERSON_ATTRS?:
+                type: object
+                # additionalProperties: false
+                properties:
+                  PERSON_ATTR:
+                    type: object
+                    properties:
+                      ATTRIBUTE_CD:
+                        type: string
+                        required: false
+                      ATTRIBUTE_VAL:
+                        type: string
+                        required: false

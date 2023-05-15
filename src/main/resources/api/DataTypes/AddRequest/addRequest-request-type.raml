@@ -1,0 +1,91 @@
+#%RAML 1.0 DataType 
+type: object
+# additionalProperties: false
+properties:
+  Request:
+    type: object
+    # additionalProperties: false
+    properties:
+      AddRequest:
+        type: object
+        # additionalProperties: false
+        properties:
+          Params:
+            type: object
+            # additionalProperties: false
+            properties:
+              ACCOUNT_NO:
+                type: integer
+                required: false
+              LOCATION_NO:
+                type: integer
+                required: false
+              PERSON_NO:
+                type: integer
+                required: false
+              SERVICE_TP:
+                type: string
+                required: false
+              SERVICE_SEQ:
+                type: integer
+                required: false
+              REQUEST_CMTS:
+                type: string
+                required: false
+              REQUEST_TP:
+                type: string
+                required: true
+              REQUESTOR_NO:
+                type: integer
+                required: false
+              REQUESTOR_ADDR:
+                type: string
+                required: false
+              REQUESTOR_FNM:
+                type: string
+                required: false
+              REQUESTOR_LNM:
+                type: string
+                required: false
+              REQUESTOR_EMAIL:
+                type: string
+                required: false
+              REQUESTOR_PHONE:
+                type: integer
+                required: false
+              REQUEST_STAT:
+                type: string
+                required: false
+              OWNER:
+                type: string
+                required: false
+              EFFECTIVE_DT:
+                type: integer
+                required: false
+              REASON_CD:
+                type: string
+                required: false
+              PRIORITY:
+                type: string
+                required: false
+              FOREIGN_ID:
+                type: integer
+                required: false
+              PERFORMANCE_BASED_YN:
+                type: string
+                required: false
+              ASSET_TP:
+                type: string
+                required: false
+              ASSET_NO:
+                type: integer
+                required: false
+              METER_NO:
+                type: integer
+                required: false
+              SERIAL_NO:
+                type: string
+                required: false
+              COMPANY_CD:
+                type: string
+                required: false

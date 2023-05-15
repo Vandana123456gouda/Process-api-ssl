@@ -1,0 +1,23 @@
+{
+  "Request": {
+    "AddAccountRelationship": {
+      "Params": {
+        "PERSON_NO": 1027274,
+        "ACCOUNT_NO": 2086328,
+        "REL_PERSON_NO": 1111606,
+        "RELATIONSHIP_TP": "R-TP",
+        "ACTIVE_DT": 20220101,
+        "INACTIVE_DT": "",
+        "NOTIFY_BILL_YN": "",
+        "NOTIFY_CO_YN": "",
+        "NOTIFY_MOVEOUT_YN": "F",
+        "EXPIRY_CD": 2,
+        "REL_CMTS": "",
+        "GENERIC_1": "",
+        "GENERIC_2": "",
+        "GENERIC_3": "",
+        "UPPER_LIMT": ""
+      }
+    }
+  }
+}

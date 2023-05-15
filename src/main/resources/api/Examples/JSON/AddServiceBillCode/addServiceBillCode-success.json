@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "AddServiceBillCode": {
+      "Params": {
+        "STATUS": 0,
+        "STATUS_DESC": "Bill code/s is/are created."
+      },
+      "STATUS": 0
+    }
+  }
+}

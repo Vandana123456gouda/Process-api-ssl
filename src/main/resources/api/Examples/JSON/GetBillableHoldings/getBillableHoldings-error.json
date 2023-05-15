@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "GetBillableHoldings": {
+      "Params": {
+        "STATUS": -100,
+        "STATUS_DESC": "Matching Billable Holding not found."
+      },
+      "STATUS": 0
+    }
+  }
+}

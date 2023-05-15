@@ -1,0 +1,319 @@
+#%RAML 1.0 DataType 
+type: object
+# additionalProperties: false
+properties:
+  Request:
+    type: object
+    # additionalProperties: false
+    properties:
+      AddLocationService:
+        type: object
+        # additionalProperties: false
+        properties:
+          Params:
+            type: object
+            # additionalProperties: false
+            properties:
+              LOCATION:
+                type: object
+                # additionalProperties: false
+                properties:
+                  LOCATION_ID_CUSTOM:
+                    type: integer
+                    required: false
+                  LOCATION_CLASS:
+                    type: string
+                    maxLength: 5
+                    required: false
+                  LOCATION_STAT:
+                    type: string
+                    maxLength: 5
+                    required: false
+                  SIC_CD:
+                    type: string
+                    maxLength: 10
+                    required: false
+                  DISTRICT_CD:
+                    type: string
+                    maxLength: 5
+                    required: false
+                  NBR_OF_UNITS:
+                    type: integer
+                    required: false
+                  APPRASAL_DISTRICT_NO:
+                    type: string
+                    maxLength: 15
+                    required: false
+                  HOUSE_NO:
+                    type: string
+                    maxLength: 18
+                    required: false
+                  STREET_PFX_DIR:
+                    type: string
+                    maxLength: 5
+                    required: false
+                  STREET_NM:
+                    type: string
+                    maxLength: 40
+                    required: false
+                  STREET_NM_SFX:
+                    type: string
+                    maxLength: 6
+                    required: false
+                  STREET_SFX_DIR:
+                    type: string
+                    maxLength: 5
+                    required: false
+                  SEC_ADDR_ID:
+                    type: string
+                    maxLength: 50
+                    required: false
+                  SEC_ADDR_RANGE:
+                    type: string
+                    maxLength: 18
+                    required: false
+                  TER_ADDR_ID:
+                    type: string
+                    maxLength: 5
+                    required: false
+                  TER_ADDR_RANGE:
+                    type: string
+                    maxLength: 18
+                    required: false
+                  ADDR_ID_4:
+                    type: string
+                    maxLength: 5
+                    required: false
+                  ADDR_RANGE_4:
+                    type: string
+                    maxLength: 18
+                    required: false
+                  LOCATOR_ID:
+                    type: string
+                    maxLength: 5
+                    required: false
+                  CITY:
+                    type: string
+                    maxLength: 30
+                    required: false
+                  PROVINCE_CD:
+                    type: string
+                    maxLength: 5
+                    required: false
+                  POSTAL_CODE:
+                    type: string
+                    maxLength: 13
+                    required: false
+                  LIS_CD:
+                    type: string
+                    maxLength: 5
+                    required: false
+                  LIS_NO:
+                    type: string
+                    maxLength: 15
+                    required: false
+                  LIS_VALIDAT_STAT:
+                    type: string
+                    maxLength: 5
+                    required: false
+                  SC_OLD_LOC_CLASS:
+                    type: string
+                    maxLength: 5
+                    required: false
+                  SC_NEW_LOC_CLASS:
+                    type: string
+                    maxLength: 5
+                    required: false
+                  SC_CLASS_CHG_DT:
+                    type: string
+                    required: false
+                  SC_CLASS_CHG_FROM:
+                    type: number
+                    required: false
+                  SELECT_CD:
+                    type: string
+                    maxLength: 5
+                    required: false
+                  GENERIC_1:
+                    type: string
+                    maxLength: 50
+                    required: false
+                  GENERIC_2:
+                    type: string
+                    maxLength: 50
+                    required: false
+                  GENERIC_3:
+                    type: string
+                    maxLength: 50
+                    required: false
+                  GENERIC_CD_1:
+                    type: string
+                    maxLength: 5
+                    required: false
+                  GENERIC_CD_2:
+                    type: string
+                    maxLength: 5
+                    required: false
+                  GENERIC_CD_3:
+                    type: string
+                    maxLength: 5
+                    required: false
+                  SPECIAL_DIRECTIONS:
+                    type: string
+                    maxLength: 50
+                    required: false
+                  WARD_NO:
+                    type: string
+                    maxLength: 5
+                    required: false
+                  TAX_ROLL_NO:
+                    type: string
+                    maxLength: 30
+                    required: false
+                  PARCEL_ID:
+                    type: string
+                    maxLength: 16
+                    required: false
+                  A_GEOLAT:
+                    type: number
+                    required: false
+                  A_GEOLONG:
+                    type: number
+                    required: false
+                  A_DESC:
+                    type: string
+                    maxLength: 40
+                    required: false
+                  A_SHDESC:
+                    type: string
+                    maxLength: 15
+                    required: false
+                  A_MODEL:
+                    type: string
+                    maxLength: 5
+                    required: false
+                  A_QUALIFIER:
+                    type: string
+                    maxLength: 5
+                    required: false
+                  A_MFT_ID:
+                    type: string
+                    required: false
+                  A_MFT_YR:
+                    type: string
+                    required: false
+                  A_GROUP:
+                    type: string
+                    required: false
+                  A_ITEM_NO:
+                    type: string
+                    required: false
+                  A_LOCATION:
+                    type: string
+                    required: false
+                  A_STATUS:
+                    type: string
+                    required: false
+                  A_TAG:
+                    type: string
+                    required: false
+                  A_ACQ_YR:
+                    type: string
+                    required: false
+                  A_COMMENT:
+                    type: string
+                    maxLength: 240
+                    required: false
+                  A_CONT_ID:
+                    type: string
+                    required: false
+                  A_NOTES:
+                    type: string
+                    required: false
+                  A_SR_NO:
+                    type: string
+                    maxLength: 10
+                    required: false
+                  A_UNITS:
+                    type: number
+                    required: false
+                  SERVICE:
+                    type: object
+                    # additionalProperties: false
+                    properties:
+                      SERVICE_TP:
+                        type: string
+                        maxLength: 5
+                        required: false
+                      METERED_YN:
+                        type: string
+                        enum: [T,F]
+                        required: false
+                      SET_DT:
+                        type: string
+                        required: false
+                      PULL_DT:
+                        type: string
+                        required: false
+                      ROUTE_NO_DFLT:
+                        type: number
+                        required: false
+                      BYPASS_BILL_YN:
+                        type: string
+                        enum: [T,F]
+                        required: false
+                      SERV_DISTRICT_CD:
+                        type: string
+                        maxLength: 5
+                        required: false
+                      METER?:
+                        type: object
+                        # additionalProperties: false
+                        properties:
+                          METER_TP:
+                            type: string
+                            maxLength: 5
+                            required: false
+                          SERIAL_NO:
+                            type: string
+                            maxLength: 15
+                            required: false
+                          ROUTE_NO:
+                            type: number
+                            required: false
+                          ROUTE_SEQ:
+                            type: number
+                            required: false
+                          METER_STAT:
+                            type: string
+                            maxLength: 5
+                            required: false
+                          EFFECTIVE_DT:
+                            type: string
+                            required: false
+                          REGISTER?:
+                            type: object
+                            # additionalProperties: false
+                            properties:
+                              REGISTER_TP:
+                                type: string
+                                maxLength: 5
+                                required: false
+                              TOU_PERIOD_CD:
+                                type: string
+                                maxLength: 5
+                                required: false
+                              MULTIPLIER:
+                                type: number
+                                required: false
+                              NO_OF_DIALS:
+                                type: number
+                                required: false
+                      SERV_CMTS:
+                        type: string
+                        maxLength: 2000
+                        required: false
+                  LOCATION_CMTS:
+                    type: string
+                    maxLength: 2000
+                    required: false

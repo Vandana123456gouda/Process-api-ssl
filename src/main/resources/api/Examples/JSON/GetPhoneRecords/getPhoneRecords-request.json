@@ -1,0 +1,9 @@
+{
+  "Request": {
+    "GetPhoneRecords": {
+      "Params": {
+        "PERSON_NO": 1000001
+      }
+    }
+  }
+}

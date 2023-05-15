@@ -1,0 +1,12 @@
+{
+  "Reply": {
+    "AddLocationService": {
+      "Params": {
+        "LOCATION_NO": 28053,
+        "STATUS": 0,
+        "STATUS_DESC": "The AddLocationService message completed successfully."
+      },
+      "STATUS": 0
+    }
+  }
+}

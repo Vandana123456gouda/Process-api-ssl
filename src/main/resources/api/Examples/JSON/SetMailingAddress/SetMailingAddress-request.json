@@ -1,0 +1,42 @@
+{
+  "Request": {
+    "SetMailingAddress": {
+      "Params": {
+        "PERSON_NO": 2001,
+        "ADDRESS_SEQ": 1,
+        "ACTIVE_DT": 20080101,
+        "INACTIVE_DT": 20081231,
+        "ADDRESS_CD": "BUS",
+        "BUILDING_NAME": "James\nBuilding",
+        "HOUSE_NO": 100,
+        "STREET_PFX_DIR": "E",
+        "STREET_NM": "SHAUGHNESSY",
+        "STREET_NM_SFX": "ST",
+        "STREET_SFX_DIR": "E",
+        "SEC_ADDR_ID": "UNIT",
+        "SEC_ADDR_RANGE": 100,
+        "TER_ADDR_ID": "UNIT",
+        "TER_ADDR_RANGE": 100,
+        "ADDR_ID_4": "FLOOR",
+        "ADDR_RANGE_4": 100,
+        "LOCATOR_ID": "EAST",
+        "ROUTE_PFX": "H",
+        "ADDR_ROUTE": 100,
+        "DELIVERY_INST_TP": "RPO",
+        "DELIVERY_INST_NM": "TEST",
+        "CITY": "VANCOUVER",
+        "STATE_CD": "",
+        "ZIP_CD": "V3M 6B2",
+        "PO_BOX_NO": "",
+        "COUNTRY_CD": "CA",
+        "IN_CARE_OF": "Test",
+        "ENVELOPE_MEMO": "Test",
+        "SEASON_STR_MTH": "JAN",
+        "SEASON_STR_DAY": 1,
+        "SEASON_END_MTH": "JAN",
+        "SEASON_END_DAY": 31,
+        "ADDRESS_CMTS": "Test"
+      }
+    }
+  }
+}

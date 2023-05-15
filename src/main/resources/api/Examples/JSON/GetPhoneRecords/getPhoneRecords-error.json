@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "GetPhoneRecords": {
+      "Params": {
+        "STATUS": -100,
+        "STATUS_DESC": "PERSON_NO tag is missing or is empty."
+      },
+      "STATUS": 0
+    }
+  }
+}

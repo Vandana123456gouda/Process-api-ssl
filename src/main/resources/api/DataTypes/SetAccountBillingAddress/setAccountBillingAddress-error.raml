@@ -1,0 +1,21 @@
+#%RAML 1.0 DataType 
+type: object
+properties:
+  Reply:
+    type: object
+    properties:
+      SetAccountBillingAddress:
+        type: object
+        properties:
+          Params:
+            type: object
+            properties:
+              STATUS:
+                type: integer
+                required: false
+              STATUS_DESC:
+                type: string
+                required: false
+          STATUS:
+            type: integer
+            required: false

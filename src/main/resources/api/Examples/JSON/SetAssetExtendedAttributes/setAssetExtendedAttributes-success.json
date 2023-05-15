@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "SetAssetExtendedAttributes": {
+      "Params": {
+        "STATUS": 230,
+        "STATUS_DESC": "Extended Attributes Asset created!"
+      },
+      "STATUS": 0
+    }
+  }
+}

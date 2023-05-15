@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "GetPerson": {
+      "Params": {
+        "STATUS": -100,
+        "STATUS_DESC": "PERSON_NO, PERSON_ID_CUSTOM, LOGIN_NM, I_DRIVERS_LIC_PROV/I_DRIVERS_LIC_NO, O_FEN or  I_SIN tag is missing or is empty."
+      },
+      "STATUS": 0
+    }
+  }
+}

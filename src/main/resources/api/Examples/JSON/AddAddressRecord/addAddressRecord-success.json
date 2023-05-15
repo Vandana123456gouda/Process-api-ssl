@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "AddAddressRecord": {
+      "Params": {
+        "STATUS": 0,
+        "ADDRESS_SEQ": 2
+      },
+      "STATUS": 0
+    }
+  }
+}

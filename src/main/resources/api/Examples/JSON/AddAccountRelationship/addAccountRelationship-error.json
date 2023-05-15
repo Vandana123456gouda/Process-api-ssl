@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "AddAccountRelationship": {
+      "Params": {
+        "STATUS": -200,
+        "STATUS_DESC": "Error storing SG00160T. Context s_100. Status -7."
+      },
+      "STATUS": 0
+    }
+  }
+}

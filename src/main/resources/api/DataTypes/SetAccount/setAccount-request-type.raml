@@ -1,0 +1,203 @@
+#%RAML 1.0 DataType 
+type: object
+# additionalProperties: false
+properties:
+  Request:
+    type: object
+    # additionalProperties: false
+    properties:
+      SetAccount:
+        type: object
+        # additionalProperties: false
+        properties:
+          Params:
+            type: object
+            # additionalProperties: false
+            properties:
+              ACCOUNT_NO:
+                type: string
+                required: true
+              ACCOUNT_NO_CUSTOM:
+                type: string
+                required: false
+              ACCOUNT_NO_CUSTOM_2:
+                type: string
+                required: false
+              APPLICATION_NO:
+                type: string
+                required: false
+              CYCLE_CD:
+                type: string
+                required: false
+              ELIG_TXROLLOVER_YN:
+                type: string
+                required: false
+              CUSTOM_BILL_ID:
+                type: string
+                required: false
+              TITLE_CD:
+                type: string
+                required: false
+              PERSON_FNM:
+                type: string
+                required: false
+              PERSON_MNM:
+                type: string
+                required: false
+              PERSON_LNM:
+                type: string
+                required: false
+              IN_CARE_OF_OVRD:
+                type: string
+                required: false
+              ENVELOPE_MEMO_OVRD:
+                type: string
+                required: false
+              ACCOUNT_STAT:
+                type: string
+                required: false
+              ACCOUNT_STAT_START_DT:
+                type: string
+                required: false
+              ACCOUNT_STAT_END_DT:
+                type: string
+                required: false
+              AVG_BILLING_YN:
+                type: string
+                required: false
+              AVG_DFLT_AMT:
+                type: string
+                required: false
+              BILLING_STAT:
+                type: string
+                required: false
+              CLOSED_YN:
+                type: string
+                required: false
+              OK_TO_BILL_YN:
+                type: string
+                required: false
+              BILL_COPIES:
+                type: string
+                required: false
+              BILL_COUNT:
+                type: string
+                required: false
+              ACCOUNT_CLASS_DFLT:
+                type: string
+                required: false
+              ALLOW_DAYS_LATE:
+                type: string
+                required: false
+              SELECT_CD:
+                type: string
+                required: false
+              OVERDUE_YN:
+                type: string
+                required: false
+              TAX_EXEMPT_YN:
+                type: string
+                required: false
+              GENERIC_1:
+                type: string
+                required: false
+              GENERIC_2:
+                type: string
+                required: false
+              GENERIC_3:
+                type: string
+                required: false
+              CO_BYPASS_YN:
+                type: string
+                required: false
+              INTEREST_EXEMPT_YN:
+                type: string
+                required: false
+              BYPASS_END_DT:
+                type: string
+                required: false
+              CREDIT_SCORE:
+                type: string
+                required: false
+              CREDIT_RATING_CD:
+                type: string
+                required: false
+              CREDIT_EXPIRY_DT:
+                type: string
+                required: false
+              LIEN_STATUS:
+                type: string
+                required: false
+              LIEN_AMT:
+                type: string
+                required: false
+              BYPASS_WRITE_OFF_YN:
+                type: string
+                required: false
+              HOLD_WRITE_OFF_YN:
+                type: string
+                required: false
+              LANGUAGE_CD:
+                type: string
+                required: false
+              NO_BILL_START_DT:
+                type: string
+                required: false
+              NO_BILL_END_DT:
+                type: string
+                required: false
+              REBILL_AS_INSTBILL:
+                type: string
+                required: false
+              WELFARE_AGENCY_YN:
+                type: string
+                required: false
+              ATT_ON_HOLD_YN:
+                type: string
+                required: false
+              ATT_ON_HOLD_END_DT:
+                type: string
+                required: false
+              BYPASS_WRTOF_END_DT:
+                type: string
+                required: false
+              REBILL_PENDING_YN:
+                type: string
+                required: false
+              BILL_SORT_SEQ_CD:
+                type: string
+                required: false
+              MIN_BILL_AMT:
+                type: string
+                required: false
+              MIN_BILL_TAXABLE_YN:
+                type: string
+                required: false
+              MIN_BILL_DISCOUNTABLE_YN:
+                type: string
+                required: false
+              ARCHIVE_NO:
+                type: string
+                required: false
+              BUDGET_BILL_TP:
+                type: string
+                required: false
+              FORCE_FINAL_YN:
+                type: string
+                required: false
+              ACCOUNT_CMTS:
+                type: string
+                required: false
+              ACCOUNT_ATTRS?:
+                type: object
+                # additionalProperties: false
+                properties:
+                  ACCOUNT_ATTR:
+                    type: object
+                    properties:
+                      ATTRIBUTE_CD:
+                        type: string
+                        required: false
+                      ATTRIBUTE_VAL:
+                        type: string
+                        required: false

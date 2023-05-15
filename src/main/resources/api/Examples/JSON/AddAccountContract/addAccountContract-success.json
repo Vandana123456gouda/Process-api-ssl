@@ -1,0 +1,13 @@
+{
+  "Reply": {
+    "AddAccountContract": {
+      "Params": {
+        "ACCOUNT_NO": 2086328,
+        "CONTRACT_SEQ": "3",
+        "STATUS": "0",
+        "STATUS_DESC": "Contract Seq 3 FOR Account 2086328 created."
+      },
+      "STATUS": "0"
+    }
+  }
+}

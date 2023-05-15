@@ -1,0 +1,25 @@
+{
+  "Request": {
+    "AddServiceBillCode": {
+      "Params": {
+        "LOCATION_NO": 3000114,
+        "SERVICE_SEQ": 1,
+        "BILL_CD": "4PR01",
+        "ACTIVE_DT": "03082023",
+        "CH_CREATED_FROM": 84,
+        "CH_DEACTIVATED_FROM": 98,
+        "ACCOUNT_NO": 2000001,
+        "INACTIVE_DT": "",
+        "SC_CREATED_FROM": 8,
+        "SF_CREATED_FROM": 25,
+        "SC_DEACTIVATED_FROM": 52,
+        "SF_DEACTIVATED_FROM": 3,
+        "INACTIVATED_BY": "S",
+        "SBC_MULTIPLIER": 1.2000,
+        "REBILL_YN": "Y",
+        "BILLABLE_EVENT_YN": "F",
+        "BILL_CODE_CMTS": ""
+      }
+    }
+  }
+}

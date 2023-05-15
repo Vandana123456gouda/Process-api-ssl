@@ -1,0 +1,9 @@
+{
+  "Request": {
+    "GetAddressRecords": {
+      "Params": {
+        "PERSON_NO": 1000017
+      }
+    }
+  }
+}

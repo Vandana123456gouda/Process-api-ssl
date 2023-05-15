@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "AddAccountLocation": {
+      "Params": {
+        "STATUS": "-1",
+        "STATUS_DESC": "Error in creating Person/Account/Location/etc routine."
+      },
+      "STATUS": "0"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "GetServiceBillCode": {
+      "Params": {
+        "STATUS": -2,
+        "STATUS_DESC": "Service Bill Codes not found."
+      },
+      "STATUS": 0
+    }
+  }
+}

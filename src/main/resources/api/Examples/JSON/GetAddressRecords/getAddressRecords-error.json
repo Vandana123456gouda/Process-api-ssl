@@ -1,0 +1,11 @@
+{
+  "Reply": {
+    "GetAddressRecords": {
+      "Params": {
+        "STATUS": -1,
+        "STATUS_DESC": "Person Not Found."
+      },
+      "STATUS": 0
+    }
+  }
+}

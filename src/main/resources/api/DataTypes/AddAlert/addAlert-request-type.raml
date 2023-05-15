@@ -1,0 +1,42 @@
+#%RAML 1.0 DataType 
+type: object
+# additionalProperties: false
+properties:
+  Request:
+    type: object
+    # additionalProperties: false
+    properties:
+      AddAlert:
+        type: object
+        # additionalProperties: false
+        properties:
+          Params:
+            type: object
+            # additionalProperties: false
+            properties:
+              OWNERSHIP_CD:
+                type: string
+                maxLength: 5
+                required: true
+              ALERT_KEY:
+                type: integer
+                required: true
+              ALERT_KEY_CUSTOM:
+                type: string
+                maxLength: 30
+                required: false
+              ALERT_CD:
+                type: string
+                maxLength: 5
+                required: true
+              ALERT_ON_DT:
+                type: string
+                required: false
+              ADDRESSEE_CD:
+                type: string
+                maxLength: 5
+                required: false
+              ALERT_CMTS:
+                type: string
+                maxLength: 2000
+                required: false
